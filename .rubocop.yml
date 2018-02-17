@@ -1,0 +1,6 @@
+inherit_from: .rubocop_todo.yml
+
+Metrics/LineLength:
+  Max: 80
+  IgnoredPatterns: ['\A#']
+
