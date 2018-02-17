@@ -1,5 +1,7 @@
 ### Therapy Track
 
+[![CircleCI](https://circleci.com/gh/anlewis/therapy_track.svg?style=shield)](https://circleci.com/gh/anlewis/therapy_track)
+
 TherapyTrack is an application for people with anxiety/depression that synthesizes user information in a single page report and remind users to schedule therapy appointments.
 
 #### Background
