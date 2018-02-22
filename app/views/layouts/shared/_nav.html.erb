@@ -1,10 +1,10 @@
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">Therapy Track</a>
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">TherapyTrack</a>
 </nav>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
+    <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <a class="nav-link" href="#">Home</a>
       </li>
@@ -18,5 +18,8 @@
         <a class="nav-link" href="#">Log Mood</a>
       </li>
     </ul>
+    <span class="navbar-nav ml-auto">
+      <%= link_to "Sign out", signout_path, id: "sign_out" %>
+    </span>
   </div>
 </nav>
