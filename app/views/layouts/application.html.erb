@@ -12,7 +12,7 @@
     <% if current_user %>
       <%= render "layouts/shared/nav" %>
     <% else %>
-      <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
+      <%= render "layouts/login"%>
     <% end %>
     </div>
 
