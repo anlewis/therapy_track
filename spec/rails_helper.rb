@@ -7,6 +7,9 @@ end
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'support/factory_bot'
+require 'coveralls'
+
+Coveralls.wear!('rails')
 
 ActiveRecord::Migration.maintain_test_schema!
 
