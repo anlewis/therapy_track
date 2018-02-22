@@ -2,6 +2,8 @@
 
 [![CircleCI](https://circleci.com/gh/anlewis/therapy_track.svg?style=shield)](https://circleci.com/gh/anlewis/therapy_track)
 
+[![Coverage Status](https://coveralls.io/repos/github/anlewis/therapy_track/badge.svg?branch=master)](https://coveralls.io/github/anlewis/therapy_track?branch=master)
+
 TherapyTrack is an application for people with anxiety/depression that synthesizes user information in a single page report and remind users to schedule therapy appointments.
 
 #### Background
