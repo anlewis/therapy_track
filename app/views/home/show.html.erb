@@ -1,7 +1,9 @@
-<div class="jumbotron text-center">
-  <h1 class="display-4">Hello, <%= current_user.name %>!</h1>
-  <hr class="my-4">
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Generate New Wellness Report</a>
-  </p>
-</div>
+<% if current_user %>
+  <div class="jumbotron text-center">
+    <h1 class="display-4">Hello, <%= current_user.name %>!</h1>
+    <hr class="my-4">
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="#" role="button">Generate New Wellness Report</a>
+    </p>
+  </div>
+<% end %>

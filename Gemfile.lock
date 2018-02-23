@@ -84,28 +84,13 @@ GEM
     factory_bot_rails (4.8.2)
       factory_bot (~> 4.8.2)
       railties (>= 3.0.0)
-<<<<<<< HEAD
     faraday (0.12.2)
-=======
-    faraday (0.14.0)
->>>>>>> Fetch list of calendars from google api
       multipart-post (>= 1.2, < 3)
-    ffi (1.9.21)
+    ffi (1.9.22)
     figaro (1.1.1)
       thor (~> 0.14)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
-<<<<<<< HEAD
-    hashie (3.5.7)
-    i18n (0.9.5)
-      concurrent-ruby (~> 1.0)
-    jquery-rails (4.3.1)
-      rails-dom-testing (>= 1, < 3)
-      railties (>= 4.2.0)
-      thor (>= 0.14, < 2.0)
-    json (2.1.0)
-    jwt (1.5.6)
-=======
     google-api-client (0.19.8)
       addressable (~> 2.5, >= 2.5.1)
       googleauth (>= 0.5, < 0.7.0)
@@ -121,11 +106,16 @@ GEM
       multi_json (~> 1.11)
       os (~> 0.9)
       signet (~> 0.7)
+    hashie (3.5.7)
     httpclient (2.8.3)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
-    jwt (2.1.0)
->>>>>>> Fetch list of calendars from google api
+    jquery-rails (4.3.1)
+      rails-dom-testing (>= 1, < 3)
+      railties (>= 4.2.0)
+      thor (>= 0.14, < 2.0)
+    json (2.1.0)
+    jwt (1.5.6)
     launchy (2.4.3)
       addressable (~> 2.3)
     listen (3.1.5)
@@ -150,15 +140,11 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     multi_json (1.13.1)
-<<<<<<< HEAD
     multi_xml (0.6.0)
-=======
->>>>>>> Fetch list of calendars from google api
     multipart-post (2.0.0)
     nio4r (2.2.0)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
-<<<<<<< HEAD
     oauth2 (1.4.0)
       faraday (>= 0.8, < 0.13)
       jwt (~> 1.0)
@@ -177,11 +163,9 @@ GEM
     omniauth-oauth2 (1.3.1)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
-=======
     os (0.9.6)
->>>>>>> Fetch list of calendars from google api
     parallel (1.12.1)
-    parser (2.5.0.1)
+    parser (2.5.0.2)
       ast (~> 2.4.0)
     pg (1.0.0)
     popper_js (1.12.9)
@@ -264,19 +248,16 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
-<<<<<<< HEAD
-    simplecov (0.14.1)
-      docile (~> 1.1.0)
-      json (>= 1.8, < 3)
-      simplecov-html (~> 0.10.0)
-    simplecov-html (0.10.2)
-=======
     signet (0.8.1)
       addressable (~> 2.3)
       faraday (~> 0.9)
       jwt (>= 1.5, < 3.0)
       multi_json (~> 1.10)
->>>>>>> Fetch list of calendars from google api
+    simplecov (0.14.1)
+      docile (~> 1.1.0)
+      json (>= 1.8, < 3)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.2)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -326,11 +307,8 @@ DEPENDENCIES
   coveralls
   factory_bot_rails (~> 4.0)
   figaro
-<<<<<<< HEAD
-  jquery-rails
-=======
   google-api-client
->>>>>>> Fetch list of calendars from google api
+  jquery-rails
   launchy
   listen (>= 3.0.5, < 3.2)
   omniauth-google-oauth2 (~> 0.2.1)
