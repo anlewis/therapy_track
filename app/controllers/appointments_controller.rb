@@ -23,7 +23,8 @@ class AppointmentsController < ApplicationController
     service = Google::Apis::CalendarV3::CalendarService.new
     service.authorization = client
 
-    @calendar_list = service.list_calendar_lists
+    @event_list = service.list_events('1ee7r2c7euhrsmi6vmj5qg6fb4@group.calendar.google.com')
+    
     # protect from expired access token errors
     rescue Google::Apis::AuthorizationError
     response = client.refresh!
@@ -33,17 +34,7 @@ class AppointmentsController < ApplicationController
     retry
   end
 
-  def events
-    client = Signet::OAuth2::Client.new(client_options)
-    client.update!(session[:authorization])
-
-    service = Google::Apis::CalendarV3::CalendarService.new
-    service.authorization = client
-
-    @event_list = service.list_events(params[:calendar_id])
-  end
-
-  def new_event
+  def create
     client = Signet::OAuth2::Client.new(client_options)
     client.update!(session[:authorization])
 
@@ -58,9 +49,9 @@ class AppointmentsController < ApplicationController
       summary: 'New event!'
     })
 
-    service.insert_event(params[:calendar_id], event)
+    service.insert_event('1ee7r2c7euhrsmi6vmj5qg6fb4@group.calendar.google.com', event)
 
-    redirect_to events_url(calendar_id: params[:calendar_id])
+    redirect_to appointments_url(calendar_id: '1ee7r2c7euhrsmi6vmj5qg6fb4@group.calendar.google.com')
   end
 
   private
