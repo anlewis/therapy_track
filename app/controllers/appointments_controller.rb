@@ -23,7 +23,8 @@ class AppointmentsController < ApplicationController
     service = Google::Apis::CalendarV3::CalendarService.new
     service.authorization = client
 
-    @event_list = service.list_events('1ee7r2c7euhrsmi6vmj5qg6fb4@group.calendar.google.com')
+    create_appointments_calendar(client)
+    @event_list = service.list_events(current_user.calendar)
     
     # protect from expired access token errors
     rescue Google::Apis::AuthorizationError
@@ -49,20 +50,40 @@ class AppointmentsController < ApplicationController
       summary: 'New event!'
     })
 
-    service.insert_event('1ee7r2c7euhrsmi6vmj5qg6fb4@group.calendar.google.com', event)
+    create_appointments_calendar(client)
 
-    redirect_to appointments_url(calendar_id: '1ee7r2c7euhrsmi6vmj5qg6fb4@group.calendar.google.com')
+    service.insert_event(current_user.calendar, event)
+
+    redirect_to appointments_url(calendar_id: current_user.calendar)
   end
 
   private
-  def client_options
-    {
-      client_id: ENV['google_client_id'],
-      client_secret: ENV['google_client_secret'],
-      authorization_uri: 'https://accounts.google.com/o/oauth2/auth',
-      token_credential_uri: 'https://accounts.google.com/o/oauth2/token',
-      scope: Google::Apis::CalendarV3::AUTH_CALENDAR,
-      redirect_uri: appointments_callback_url
-    }
-  end
+    def client_options
+      {
+        client_id: ENV['google_client_id'],
+        client_secret: ENV['google_client_secret'],
+        authorization_uri: 'https://accounts.google.com/o/oauth2/auth',
+        token_credential_uri: 'https://accounts.google.com/o/oauth2/token',
+        scope: Google::Apis::CalendarV3::AUTH_CALENDAR,
+        redirect_uri: appointments_callback_url
+      }
+    end
+
+    def create_appointments_calendar(client)
+      # create calendar for user if necessary
+      if current_user.calendar.nil?
+        service = Google::Apis::CalendarV3::CalendarService.new
+        service.authorization = client
+
+        calendar = Google::Apis::CalendarV3::Calendar.new(
+          summary: 'TherapyTrack'
+        )
+
+        service.insert_calendar(calendar)
+
+        user_calendar = service.insert_calendar(calendar)
+
+        current_user.update!(calendar: user_calendar.id)
+      end
+    end
 end
