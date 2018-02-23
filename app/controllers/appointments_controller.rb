@@ -13,10 +13,10 @@ class AppointmentsController < ApplicationController
 
     session[:authorization] = response
 
-    redirect_to calendars_url
+    redirect_to appointments_path
   end
 
-  def calendars
+  def index
     client = Signet::OAuth2::Client.new(client_options)
     client.update!(session[:authorization])
 
@@ -71,7 +71,7 @@ class AppointmentsController < ApplicationController
       authorization_uri: 'https://accounts.google.com/o/oauth2/auth',
       token_credential_uri: 'https://accounts.google.com/o/oauth2/token',
       scope: Google::Apis::CalendarV3::AUTH_CALENDAR,
-      redirect_uri: callback_url
+      redirect_uri: appointments_callback_url
     }
   end
 end
