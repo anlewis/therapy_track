@@ -31,6 +31,16 @@ end
     @calendar_list = service.list_calendar_lists
   end
 
+  def events
+    client = Signet::OAuth2::Client.new(client_options)
+    client.update!(session[:authorization])
+
+    service = Google::Apis::CalendarV3::CalendarService.new
+    service.authorization = client
+
+    @event_list = service.list_events(params[:calendar_id])
+  end
+
   private
 
   def client_options
