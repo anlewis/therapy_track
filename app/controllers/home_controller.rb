@@ -1,9 +1,7 @@
 class HomeController < ApplicationController
-<<<<<<< HEAD
   def show
   end
-end
-=======
+
   def redirect
     client = Signet::OAuth2::Client.new(client_options)
 
@@ -29,6 +27,13 @@ end
     service.authorization = client
 
     @calendar_list = service.list_calendar_lists
+    # protect from expired access token errors
+    rescue Google::Apis::AuthorizationError
+    response = client.refresh!
+
+    session[:authorization] = session[:authorization].merge(response)
+
+    retry
   end
 
   def events
@@ -62,7 +67,6 @@ end
   end
 
   private
-
   def client_options
     {
       client_id: ENV['google_client_id'],
@@ -74,6 +78,3 @@ end
     }
   end
 end
-
-# AUTH_CALENDAR scope give read and write access
->>>>>>> Fetch list of calendars from google api
