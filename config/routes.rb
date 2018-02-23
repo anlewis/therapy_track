@@ -9,10 +9,12 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create, :destroy]
   resource :home, only: [:show]
 
-  get '/redirect', to: 'appointments#redirect', as: 'redirect'
-  get '/callback', to: 'appointments#callback', as: 'callback'
+  resources :appointments, only: [:index]
+
+  get '/redirect', to: 'appointments#redirect', as: 'appointments_redirect'
+  get '/callback', to: 'appointments#callback', as: 'appointments_callback'
   # view calendar list
-  get '/calendars', to: 'appointments#calendars', as: 'calendars'
+  # get '/calendars', to: 'appointments#calendars', as: 'calendars'
   # view event list for a calendar
   get '/events/:calendar_id', to: 'appointments#events', as: 'events', calendar_id: /[^\/]+/
   # add event to calendar
