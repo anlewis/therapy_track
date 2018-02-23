@@ -1,5 +1,15 @@
-<ul>
-  <% @calendar_list.items.each do |calendar| %>
-    <li><%= calendar.summary %> (<%= link_to 'View Events', events_path(calendar.id) %>)</li>
-  <% end %>
-</ul>
+<%= form_tag appointments_path do %>
+  <%= submit_tag 'Add Appointment' %>
+<% end %>
+
+<h1>Upcoming Appointments:</h1>
+  
+<% if @event_list.nil?%>
+  <p>You have no upcoming appointments</p>
+<% else %>
+  <ul>
+    <% @event_list.items.each do |event| %>
+      <li><%= event.summary %> (<%= event.id %>)</li>
+    <% end %>
+  </ul>
+<% end %>
