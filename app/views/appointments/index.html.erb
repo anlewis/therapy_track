@@ -1,0 +1,35 @@
+<div align="center">
+
+  <br/>
+
+  <h1>Upcoming Appointments:</h1>
+
+  <br/>
+
+  <%= form_tag appointments_path do %>
+    <%= submit_tag 'Schedule New Appointment', class: "btn btn-success" %>
+  <% end %>
+
+  <br/>
+    
+  <% if @event_list.nil?%>
+    <p>You have no upcoming appointments</p>
+  <% else %>
+    <% @event_list.items.each do |event| %>
+      <div class="card" style="width: 18rem;">
+        <div class="card-header">
+          <h5 class="card-title"><%= event.summary %> </h5>
+        </div>
+        <div class="card-body">
+          <h6 class="card-subtitle mb-2 text-muted"><%= event.id %></h6>
+          <p class="card-text">Appointment Details Here</p>
+          <a href="#" class="card-link">Edit</a>
+          <a href="#" class="card-link">Delete</a>
+        </div>
+      </div>
+
+      <br/>
+
+    <% end %>
+  <% end %>
+</div>

@@ -19,6 +19,10 @@ Anxiety disorders are the most common mental illness in the U.S., affecting 40 m
 
 OAuth 2.0 for Google setup through [Rich on Rails](https://richonrails.com/articles/google-authentication-in-ruby-on-rails/)
 
+Google Calendar API setup following the guide [ReadySteadyCode](https://readysteadycode.com/howto-integrate-google-calendar-with-rails)
+
+Advice on Psychology Assessments give by Elena Bmk
+
 <!-- Things you may want to cover:
 
 * Ruby version

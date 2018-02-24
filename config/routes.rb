@@ -8,4 +8,15 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:create, :destroy]
   resource :home, only: [:show]
+
+  resources :appointments, only: [:index, :new, :create]
+
+  get '/redirect', to: 'appointments#redirect', as: 'appointments_redirect'
+  get '/callback', to: 'appointments#callback', as: 'appointments_callback'
+  # view calendar list
+  # get '/calendars', to: 'appointments#calendars', as: 'calendars'
+  # view event list for a calendar
+  get '/events/:calendar_id', to: 'appointments#events', as: 'events', calendar_id: /[^\/]+/
+  # add event to calendar
+  post '/events/:calendar_id', to: 'appointments#new_event', as: 'new_event', calendar_id: /[^\/]+/
 end

@@ -8,6 +8,7 @@ end
 gem 'coffee-rails', '~> 4.2'
 gem 'figaro'
 gem 'omniauth-google-oauth2', '~> 0.2.1'
+gem 'google-api-client', require: 'google/apis/calendar_v3'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.5'
