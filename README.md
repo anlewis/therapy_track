@@ -21,6 +21,8 @@ OAuth 2.0 for Google setup through [Rich on Rails](https://richonrails.com/artic
 
 Google Calendar API setup following the guide [ReadySteadyCode](https://readysteadycode.com/howto-integrate-google-calendar-with-rails)
 
+For stub_omniauth and testing [Jesse Spevack](http://www.jessespevack.com/blog/2016/10/16/how-to-test-drive-omniauth-google-oauth2-for-your-rails-app)
+
 Advice on Psychology Assessments give by Elena Bmk
 
 <!-- Things you may want to cover:
