@@ -1,0 +1,18 @@
+  <%= form_for @appointment do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :summary %>
+
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+
+    <%= f.label :start %>
+    <%= f.datetime_field :start %>
+
+    <%= f.label :end %>
+    <%= f.datetime_field :end %>
+
+    <%= f.submit %>
+  <% end %>

@@ -57,6 +57,10 @@ class AppointmentsController < ApplicationController
     redirect_to appointments_url(calendar_id: current_user.calendar)
   end
 
+  def new
+    @appointment = Appointment.new
+  end
+
   private
     def client_options
       {
@@ -78,7 +82,6 @@ class AppointmentsController < ApplicationController
         calendar = Google::Apis::CalendarV3::Calendar.new(
           summary: 'TherapyTrack'
         )
-
         service.insert_calendar(calendar)
 
         user_calendar = service.insert_calendar(calendar)
