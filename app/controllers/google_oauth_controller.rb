@@ -33,13 +33,4 @@ class GoogleOauthController < ApplicationController
         redirect_uri: google_oauth_callback_url,
       }
     end
-
-    def auth_hash
-      {
-        access_token:   current_user.google_auths.access_token,
-        expires_in:     current_user.google_auths.expires_in,
-        token_type:     current_user.google_auths.token_type,
-        refresh_token:  current_user.google_auths.refresh_token
-      }
-    end
 end
