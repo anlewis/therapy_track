@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   root to: "home#show"
 
-  # google OAuth 2.0
-  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/:provider/callback', to: 'sessions#create', as: 'signin'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
@@ -11,12 +10,8 @@ Rails.application.routes.draw do
 
   resources :appointments, only: [:index, :new, :create]
 
-  get '/redirect', to: 'appointments#redirect', as: 'appointments_redirect'
-  get '/callback', to: 'appointments#callback', as: 'appointments_callback'
-  # view calendar list
-  # get '/calendars', to: 'appointments#calendars', as: 'calendars'
-  # view event list for a calendar
+  get '/redirect', to: 'google_oauth#redirect', as: 'google_oauth_redirect'
+  get '/callback', to: 'google_oauth#callback', as: 'google_oauth_callback'
   get '/events/:calendar_id', to: 'appointments#events', as: 'events', calendar_id: /[^\/]+/
-  # add event to calendar
   post '/events/:calendar_id', to: 'appointments#new_event', as: 'new_event', calendar_id: /[^\/]+/
 end
