@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "user logs in" do
   scenario "using google oauth2" do
-    user = create(:user)
+    create(:user)
     stub_omniauth
     visit root_path
     
