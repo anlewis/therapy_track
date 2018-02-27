@@ -15,7 +15,7 @@
     <p>You have no upcoming appointments</p>
   <% else %>
     <% @appointments.to_h[:items].each do |appointment| %>
-      <div class="card" style="width: 18rem;">
+      <div class="card" style="width: 30rem;">
         <div class="card-header">
           <h5 class="card-title"><%= appointment[:summary] %> </h5>
         </div>
