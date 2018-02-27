@@ -8,8 +8,10 @@ class AppointmentsController < ApplicationController
       params['summary'],
       params['location'],
       params['description'],
-      params['start'],
-      params['end']
+      params['start_date'],
+      params['start_time'],
+      params['end_date'],
+      params['end_time']
     )
     redirect_to appointments_url(calendar_id: current_user.calendar)
   end
