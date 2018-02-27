@@ -20,21 +20,22 @@ class GoogleCalendarService
     service.list_events(current_user.calendar)
   end
 
-  def create_appointment(event_info)
+  def create_appointment(summary, location, description, start, finish)
     service = Google::Apis::CalendarV3::CalendarService.new
-    service.authorization = user_auth
+    service.authorization = client
 #check current_user.calendar.nil?
-    today = Date.today
     event = Google::Apis::CalendarV3::Event.new({
-      start: Google::Apis::CalendarV3::EventDateTime.new(date: today),
-      end: Google::Apis::CalendarV3::EventDateTime.new(date: today + 1),
-      summary: 'New event!'
+      summary: summary,
+      location: location,
+      description: description,
+      start: Google::Apis::CalendarV3::EventDateTime.new(date: start),
+      end: Google::Apis::CalendarV3::EventDateTime.new(date: finish),
     })
-    service.insert_event(user.calendar, event)
+    service.insert_event(current_user.calendar, event)
   end
 
       private
-        attr_reader :current_user, :client
+        attr_reader :current_user, :client, :event_info
 
         def client
           Signet::OAuth2::Client.new(user_auth)
@@ -46,6 +47,16 @@ class GoogleCalendarService
             "expires_in"    => current_user.oauth_expires_at,
             "token_type"    => 'Bearer',
             "refresh_token" => current_user.refresh_token
+          }
+        end
+
+        def info 
+          {
+            summary: params['summary'],
+            location: params['location'],
+            description: params['description'],
+            start: params['start'],
+            end: params['end']
           }
         end
 end
