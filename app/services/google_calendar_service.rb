@@ -20,16 +20,17 @@ class GoogleCalendarService
     service.list_events(current_user.calendar)
   end
 
-  def create_appointment(summary, location, description, start_date, start_time, end_date, end_time)
+  def create_appointment(summary, location, description, start, finish)
     service = Google::Apis::CalendarV3::CalendarService.new
     service.authorization = client
 #check current_user.calendar.nil?
+binding.pry
     event = Google::Apis::CalendarV3::Event.new({
       summary: summary,
       location: location,
       description: description,
-      start: Google::Apis::CalendarV3::EventDateTime.new(date: start_date, time: start_time),
-      end: Google::Apis::CalendarV3::EventDateTime.new(date: end_date, time: end_time),
+      start: { date_time: start.to_datetime },
+      end: { date_time: finish.to_datetime },
     })
     service.insert_event(current_user.calendar, event)
   end
