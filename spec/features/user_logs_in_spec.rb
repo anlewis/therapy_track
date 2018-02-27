@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "user logs in" do
+feature "user logs in" do
   scenario "using google oauth2" do
     create(:user)
     stub_omniauth
