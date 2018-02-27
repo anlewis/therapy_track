@@ -1,7 +1,7 @@
 <div class="text-center">
   <h2>Appointment Details</h2>
   <br />  
-  <%= form_tag controller: 'appointments', action: 'create', method: 'post' do %>
+  <%= form_tag controller: 'appointments', action: 'update', method: 'put' do %>
     <div class="form-group">
       <%= label_tag :title %>
       <br />
@@ -29,6 +29,6 @@
       <%= date_field_tag :end_date %>
       <%= time_field_tag :end_time %>
     </div>
-    <%= submit_tag 'Create Appointment', class: "btn btn-success" %>
+    <%= submit_tag 'Update Appointment', class: "btn btn-success" %>
   <% end %>
 </div>

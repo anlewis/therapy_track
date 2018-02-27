@@ -20,7 +20,7 @@ class GoogleCalendarService
     service.list_events(current_user.calendar)
   end
 
-  def create_appointment(summary, location, description, start, finish)
+  def create_appointment(summary, location, description, start_date, start_time, end_date, end_time)
     service = Google::Apis::CalendarV3::CalendarService.new
     service.authorization = client
 #check current_user.calendar.nil?
@@ -28,35 +28,39 @@ class GoogleCalendarService
       summary: summary,
       location: location,
       description: description,
-      start: Google::Apis::CalendarV3::EventDateTime.new(date: start),
-      end: Google::Apis::CalendarV3::EventDateTime.new(date: finish),
+      start: Google::Apis::CalendarV3::EventDateTime.new(date: start_date, time: start_time),
+      end: Google::Apis::CalendarV3::EventDateTime.new(date: end_date, time: end_time),
     })
     service.insert_event(current_user.calendar, event)
   end
 
-      private
-        attr_reader :current_user, :client, :event_info
+  def update_appointment()
 
-        def client
-          Signet::OAuth2::Client.new(user_auth)
-        end
+  end
 
-        def user_auth
-          {
-            "access_token"  => current_user.oauth_token,
-            "expires_in"    => current_user.oauth_expires_at,
-            "token_type"    => 'Bearer',
-            "refresh_token" => current_user.refresh_token
-          }
-        end
+    private
+      attr_reader :current_user, :client, :event_info
 
-        def info 
-          {
-            summary: params['summary'],
-            location: params['location'],
-            description: params['description'],
-            start: params['start'],
-            end: params['end']
-          }
-        end
+      def client
+        Signet::OAuth2::Client.new(user_auth)
+      end
+
+      def user_auth
+        {
+          "access_token"  => current_user.oauth_token,
+          "expires_in"    => current_user.oauth_expires_at,
+          "token_type"    => 'Bearer',
+          "refresh_token" => current_user.refresh_token
+        }
+      end
+
+      def info 
+        {
+          summary: params['summary'],
+          location: params['location'],
+          description: params['description'],
+          start: params['start'],
+          end: params['end']
+        }
+      end
 end
