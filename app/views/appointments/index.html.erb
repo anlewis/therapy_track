@@ -6,9 +6,7 @@
 
   <br/>
 
-  <%= form_tag appointments_path do %>
-    <%= submit_tag 'Schedule New Appointment', class: "btn btn-success" %>
-  <% end %>
+  <%= link_to 'Schedule New Appointment', new_appointment_path, class: "btn btn-success" %>
 
   <br/>
     

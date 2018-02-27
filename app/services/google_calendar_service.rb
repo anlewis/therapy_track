@@ -6,7 +6,7 @@ class GoogleCalendarService
 
   def all_appointments
     service = Google::Apis::CalendarV3::CalendarService.new
-    service.authorization = authorization
+    service.authorization = client
     if current_user.calendar.nil?
       calendar = Google::Apis::CalendarV3::Calendar.new(
         summary: 'TherapyTrack'
@@ -20,19 +20,10 @@ class GoogleCalendarService
     service.list_events(current_user.calendar)
   end
 
-  def new_appointment(event_info)
+  def create_appointment(event_info)
     service = Google::Apis::CalendarV3::CalendarService.new
-    service.authorization = authorization
-    if current_user.calendar.nil?
-      calendar = Google::Apis::CalendarV3::Calendar.new(
-        summary: 'TherapyTrack'
-      )
-      service.insert_calendar(calendar)
-
-      user_calendar = service.insert_calendar(calendar)
-
-      current_user.update!(calendar: user_calendar.id)
-    end
+    service.authorization = user_auth
+#check current_user.calendar.nil?
     today = Date.today
     event = Google::Apis::CalendarV3::Event.new({
       start: Google::Apis::CalendarV3::EventDateTime.new(date: today),
@@ -43,14 +34,18 @@ class GoogleCalendarService
   end
 
       private
-        attr_reader :current_user
+        attr_reader :current_user, :client
 
-        def authorization
+        def client
+          Signet::OAuth2::Client.new(user_auth)
+        end
+
+        def user_auth
           {
-            access_token:   current_user.google_auth.access_token,
-            expires_in:     current_user.google_auth.expires_in,
-            token_type:     current_user.google_auth.token_type,
-            refresh_token:  current_user.google_auth.refresh_token
+            "access_token"  => current_user.oauth_token,
+            "expires_in"    => current_user.oauth_expires_at,
+            "token_type"    => 'Bearer',
+            "refresh_token" => current_user.refresh_token
           }
         end
 end

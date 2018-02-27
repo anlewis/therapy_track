@@ -1,18 +1,32 @@
-  <%= form_for @appointment do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :summary %>
-
-    <%= f.label :location %>
-    <%= f.text_field :location %>
-
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-
-    <%= f.label :start %>
-    <%= f.datetime_field :start %>
-
-    <%= f.label :end %>
-    <%= f.datetime_field :end %>
-
-    <%= f.submit %>
+<div class="text-center">
+  <h2>Appointment Details</h2>
+  <br />  
+  <%= form_tag controller: 'appointments', action: 'create', method: 'post' do %>
+    <div class="form-group">
+      <%= label_tag :title %>
+      <br />
+      <%= text_field_tag :summary %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :location %>
+      <br />
+      <%= text_field_tag :location %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :description %>
+      <br />
+      <%= text_area_tag :description %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :start %>
+      <br />
+      <%= datetime_field_tag :start %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :end %>
+      <br />
+      <%= datetime_field_tag :end %>
+    </div>
+    <%= submit_tag 'Create Appointment', class: "btn btn-success" %>
   <% end %>
+</div>
