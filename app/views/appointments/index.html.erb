@@ -21,8 +21,8 @@
         </div>
         <div class="card-body">
           <h6 class="card-subtitle mb-2 text-muted"><%= appointment[:description] %></h6>
-          <p class="card-text"><%= appointment[:start][:date] %></p>
-          <p class="card-text"><%= appointment[:end][:date] %></p>
+          <p class="card-text">Start: <%= format_date_time(appointment[:start][:date_time]) %></p>
+          <p class="card-text">End: <%= format_date_time(appointment[:end][:date_time]) %></p>
           <a href="#" class="card-link">Edit</a>
           <a href="#" class="card-link">Delete</a>
         </div>
