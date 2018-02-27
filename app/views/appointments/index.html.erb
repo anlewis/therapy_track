@@ -9,18 +9,20 @@
   <%= link_to 'Schedule New Appointment', new_appointment_path, class: "btn btn-success" %>
 
   <br/>
+  <br/>
     
-  <% if @event_list.nil?%>
+  <% if @appointments.nil?%>
     <p>You have no upcoming appointments</p>
   <% else %>
-    <% @event_list.items.each do |event| %>
+    <% @appointments.to_h[:items].each do |appointment| %>
       <div class="card" style="width: 18rem;">
         <div class="card-header">
-          <h5 class="card-title"><%= event.summary %> </h5>
+          <h5 class="card-title"><%= appointment[:summary] %> </h5>
         </div>
         <div class="card-body">
-          <h6 class="card-subtitle mb-2 text-muted"><%= event.id %></h6>
-          <p class="card-text">Appointment Details Here</p>
+          <h6 class="card-subtitle mb-2 text-muted"><%= appointment[:description] %></h6>
+          <p class="card-text">appointment[:start][:date]</p>
+          <p class="card-text">appointment[:end][:date]</p>
           <a href="#" class="card-link">Edit</a>
           <a href="#" class="card-link">Delete</a>
         </div>

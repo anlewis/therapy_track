@@ -4,20 +4,13 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    # event_info = [
-    #   params['summary'],
-    #   params['location'],
-    #   params['description'],
-    #   params['start'],
-    #   params['end']
-    # ]
     GoogleCalendarService.new(current_user).create_appointment(
-                                                                params['summary'],
-                                                                params['location'],
-                                                                params['description'],
-                                                                params['start'],
-                                                                params['end']
-                                                              )
+      params['summary'],
+      params['location'],
+      params['description'],
+      params['start'],
+      params['end']
+    )
     redirect_to appointments_url(calendar_id: current_user.calendar)
   end
 
