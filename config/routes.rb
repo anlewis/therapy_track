@@ -9,5 +9,8 @@ Rails.application.routes.draw do
   resource :home, only: [:show]
 
   resources :appointments, only: [:index, :new, :create, :edit, :destroy, :update]
-  # put '/appointments/:calendar_id', to: 'appointments#update', calendar_id: /[^\/]+/
+
+  resources :reports do
+    resources :medical_reports, only: [:new, :create]
+  end
 end
