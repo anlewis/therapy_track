@@ -1,3 +1,7 @@
 <h2>Basic Medical Information</h2>
 
 <h3>O2 Saturation: <%= @report.medical_report.oxygen %> %</h3>
+<h3>Temperature: <%= @report.medical_report.temperature %> F</h3>
+<h3>Weight: <%= @report.medical_report.weight %> Ibs</h3>
+<h3>Blood Pressure: <%= @report.medical_report.systolic %>/<%= @report.medical_report.diastolic %> mmHg</h3>
+<h3>Appointment Notes: <%= @report.medical_report.notes %></h3>
