@@ -21,8 +21,8 @@
         </div>
         <div class="card-body">
           <h6 class="card-subtitle mb-2 text-muted"><%= appointment[:description] %></h6>
-          <p class="card-text">Start: <%= format_date_time(appointment[:start][:date_time]) %></p>
-          <p class="card-text">End: <%= format_date_time(appointment[:end][:date_time]) %></p>
+          <p class="card-text"><%= get_weekday(appointment[:start][:date_time]) %>, <%= get_date(appointment[:start][:date_time]) %></p>
+          <p class="card-text"><%= get_time(appointment[:start][:date_time])%> - <%= get_time(appointment[:end][:date_time]) %></p>
           <%= link_to 'Edit', edit_appointment_path(appointment), class: "card-link" %>
           <%= link_to 'Delete', appointment_path(appointment), class: "card-link", method: :delete %>
         </div>
