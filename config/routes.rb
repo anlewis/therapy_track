@@ -12,5 +12,7 @@ Rails.application.routes.draw do
 
   resources :reports do
     resources :medical_reports, only: [:new, :create]
+    get 'submit', to: 'submission#show'
+    put 'submit', to: 'submission#update'
   end
 end

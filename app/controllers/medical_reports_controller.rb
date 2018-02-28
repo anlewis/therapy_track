@@ -7,6 +7,7 @@ class MedicalReportsController < ApplicationController
   def create
     report = Report.find(params[:report_id])
     @medical_report = report.create_medical_report(medical_report_params)
+    redirect_to report_submit_path(report.id)
   end
 
   private
