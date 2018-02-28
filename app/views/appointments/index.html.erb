@@ -24,7 +24,7 @@
           <p class="card-text">Start: <%= format_date_time(appointment[:start][:date_time]) %></p>
           <p class="card-text">End: <%= format_date_time(appointment[:end][:date_time]) %></p>
           <%= link_to 'Edit', edit_appointment_path(appointment), class: "card-link" %>
-          <a href="#" class="card-link">Delete</a>
+          <%= link_to 'Delete', appointment_path(appointment), class: "card-link", method: :delete %>
         </div>
       </div>
 
