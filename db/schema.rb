@@ -10,24 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180228153753) do
+ActiveRecord::Schema.define(version: 20180228175857) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "medical_data", force: :cascade do |t|
-    t.integer "oxygen_saturation"
+  create_table "medical_reports", force: :cascade do |t|
+    t.bigint "report_id"
+    t.integer "oxygen"
     t.integer "temperature"
     t.integer "weight"
     t.integer "systolic"
     t.integer "diastolic"
     t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["report_id"], name: "index_medical_reports_on_report_id"
   end
 
   create_table "reports", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "medical_data_id"
-    t.index ["medical_data_id"], name: "index_reports_on_medical_data_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_reports_on_user_id"
   end
 
@@ -41,6 +45,6 @@ ActiveRecord::Schema.define(version: 20180228153753) do
     t.string "calendar"
   end
 
-  add_foreign_key "reports", "medical_data", column: "medical_data_id"
+  add_foreign_key "medical_reports", "reports"
   add_foreign_key "reports", "users"
 end

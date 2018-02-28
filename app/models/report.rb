@@ -1,3 +1,4 @@
 class Report < ApplicationRecord
-  has_one :user
+  belongs_to :user
+  has_one :medical_report
 end

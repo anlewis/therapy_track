@@ -1,0 +1,38 @@
+<div class="text-center">
+  <h2>Medical Information</h2>
+  <br />  
+  <%= form_for [@report, @medical_report] do |f| %>
+    <div class="form-group">
+      <%= f.label :oxygen_saturation %>
+      <br />
+      <%= f.number_field :oxygen %>
+    </div>
+    <div class="form-group">
+      <%= f.label :temperature %>
+      <br />
+      <%= f.number_field :temperature %>
+    </div>
+    <div class="form-group">
+      <%= f.label :systolic_blood_pressure %>
+      <br />
+      <%= f.number_field :systolic %>
+    </div>
+    <div class="form-group">
+      <%= f.label :diastolic_blood_pressure %>
+      <br />
+      <%= f.number_field :diastolic %>
+    </div>
+    <div class="form-group">
+      <%= f.label :weight %>
+      <br />
+      <%= f.number_field :weight %>
+    </div>
+    <div class="form-group">
+      <%= f.label :appointment_notes %>
+      <br />
+      <%= f.text_area :notes %>
+    </div>
+
+    <%= f.submit 'Add Medical Info', class: "btn btn-success" %>
+  <% end %>
+</div>
