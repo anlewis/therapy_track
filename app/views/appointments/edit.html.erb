@@ -1,7 +1,6 @@
 <div class="text-center">
   <h2>Appointment Details</h2>
   <br />  
-  <% puts params %>
   <%= form_tag "/appointments/#{params[:id]}", method: "put" do %>
     <div class="form-group">
       <%= label_tag :title %>
