@@ -1,33 +1,31 @@
 <div class="text-center">
   <h2>Appointment Details</h2>
   <br />  
-  <%= form_tag controller: 'appointments', action: 'update', method: 'put' do %>
+  <%= form_tag "/appointments/#{params[:id]}", method: "put" do %>
     <div class="form-group">
       <%= label_tag :title %>
       <br />
-      <%= text_field_tag :summary %>
+      <%= text_field_tag :summary, params[:summary] %>
     </div>
     <div class="form-group">
       <%= label_tag :location %>
       <br />
-      <%= text_field_tag :location %>
+      <%= text_field_tag :location, params[:location] %>
     </div>
     <div class="form-group">
       <%= label_tag :description %>
       <br />
-      <%= text_area_tag :description %>
+      <%= text_area_tag :description, params[:description] %>
     </div>
     <div class="form-group">
       <%= label_tag :start %>
       <br />
-      <%= date_field_tag :start_date %>
-      <%= time_field_tag :start_time %>
+      <%= datetime_field_tag :start, params[:start][:date_time]%>
     </div>
     <div class="form-group">
       <%= label_tag :end %>
       <br />
-      <%= date_field_tag :end_date %>
-      <%= time_field_tag :end_time %>
+      <%= datetime_field_tag :end, params[:end][:date_time] %>
     </div>
     <%= submit_tag 'Update Appointment', class: "btn btn-success" %>
   <% end %>

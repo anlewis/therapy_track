@@ -23,7 +23,7 @@
           <h6 class="card-subtitle mb-2 text-muted"><%= appointment[:description] %></h6>
           <p class="card-text">Start: <%= format_date_time(appointment[:start][:date_time]) %></p>
           <p class="card-text">End: <%= format_date_time(appointment[:end][:date_time]) %></p>
-          <a href="#" class="card-link">Edit</a>
+          <%= link_to 'Edit', edit_appointment_path(appointment), class: "card-link" %>
           <a href="#" class="card-link">Delete</a>
         </div>
       </div>
