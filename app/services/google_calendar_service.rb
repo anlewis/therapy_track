@@ -7,23 +7,23 @@ class GoogleCalendarService
   def all_appointments
     service = Google::Apis::CalendarV3::CalendarService.new
     service.authorization = client
+
     if current_user.calendar.nil?
       calendar = Google::Apis::CalendarV3::Calendar.new(
         summary: 'TherapyTrack'
       )
       service.insert_calendar(calendar)
-
       user_calendar = service.insert_calendar(calendar)
-
       current_user.update!(calendar: user_calendar.id)
     end
+
     service.list_events(current_user.calendar)
   end
 
   def create_appointment(summary, location, description, start, finish)
     service = Google::Apis::CalendarV3::CalendarService.new
     service.authorization = client
-#check current_user.calendar.nil?
+    #check current_user.calendar.nil?
     event = Google::Apis::CalendarV3::Event.new({
       summary: summary,
       location: location,
@@ -31,6 +31,7 @@ class GoogleCalendarService
       start: { date_time: start.to_datetime },
       end: { date_time: finish.to_datetime },
     })
+
     service.insert_event(current_user.calendar, event)
   end
 
@@ -42,8 +43,8 @@ class GoogleCalendarService
     event.summary = summary
     event.location = location
     event.description = description
-    event.start = { date_time: start.to_datetime }
-    event.end = { date_time: finish.to_datetime }
+    event.start = { date_time: start.to_datetime, time_zone: 'America/Denver' }
+    event.end = { date_time: finish.to_datetime, time_zone: 'America/Denver' }
 
     service.update_event(current_user.calendar, event.id, event)
   end
