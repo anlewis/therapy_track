@@ -8,8 +8,6 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create, :destroy]
   resource :home, only: [:show]
 
-  resources :appointments, only: [:index, :new, :create, :edit, :update, :destroy]
-
-  get '/events/:calendar_id', to: 'appointments#events', as: 'events', calendar_id: /[^\/]+/
-  post '/events/:calendar_id', to: 'appointments#new_event', as: 'new_event', calendar_id: /[^\/]+/
+  resources :appointments, only: [:index, :new, :create, :edit, :destroy, :update]
+  # put '/appointments/:calendar_id', to: 'appointments#update', calendar_id: /[^\/]+/
 end

@@ -24,7 +24,6 @@ class GoogleCalendarService
     service = Google::Apis::CalendarV3::CalendarService.new
     service.authorization = client
 #check current_user.calendar.nil?
-binding.pry
     event = Google::Apis::CalendarV3::Event.new({
       summary: summary,
       location: location,
@@ -36,7 +35,18 @@ binding.pry
   end
 
   def update_appointment()
-
+    service = Google::Apis::CalendarV3::CalendarService.new
+    service.authorization = client
+    binding.pry
+    event = Google::Apis::CalendarV3::Event.get(params[:calendarId])
+    event.update!({
+      summary: summary,
+      location: location,
+      description: description,
+      start: { date_time: start.to_datetime },
+      end: { date_time: finish.to_datetime },
+    })
+    service.patch_event(current_user.calendar, event)
   end
 
     private
