@@ -1,7 +1,10 @@
-<h2>Basic Medical Information</h2>
-
-<h3>O2 Saturation: <%= @report.medical_report.oxygen %> %</h3>
-<h3>Temperature: <%= @report.medical_report.temperature %> F</h3>
-<h3>Weight: <%= @report.medical_report.weight %> Ibs</h3>
-<h3>Blood Pressure: <%= @report.medical_report.systolic %>/<%= @report.medical_report.diastolic %> mmHg</h3>
-<h3>Appointment Notes: <%= @report.medical_report.notes %></h3>
+<div class="card mb-3" style="max-width: 70rem;">
+  <h3 class="card-header">Basic Medical Information</h3>
+  <div class="card-body">
+    <h5 class="card-text" align="left">O2 Saturation: <%= @report.medical_report.oxygen %> %</h5>
+    <h5 class="card-text" align="left">Temperature: <%= @report.medical_report.temperature %> F</h5>
+    <h5 class="card-text" align="left">Weight: <%= @report.medical_report.weight %> Ibs</h5>
+    <h5 class="card-text" align="left">Blood Pressure: <%= @report.medical_report.systolic %>/<%= @report.medical_report.diastolic %> mmHg</h5>
+    <h5 class="card-text" align="left">Appointment Notes: <%= @report.medical_report.notes %></h5>
+  </div>
+</div>

@@ -1,3 +1,7 @@
-<h1>Report Preview</h1>
+<div align="center">
+  <h1>Report Preview</h1>
 
-<%= button_to 'Submit Report', report_submit_path(@report), method: :put%>
+  <%= render "report"%>
+
+  <%= button_to 'Submit Report', report_submit_path(@report), method: :put, class: "btn btn-success"%>
+</div>
