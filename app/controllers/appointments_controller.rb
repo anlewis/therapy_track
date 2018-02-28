@@ -31,4 +31,9 @@ class AppointmentsController < ApplicationController
     )
     redirect_to appointments_url(calendar_id: current_user.calendar)
   end
+
+  def destroy
+    GoogleCalendarService.new(current_user).delete_appointment(params['id'])
+    redirect_to appointments_url(calendar_id: current_user.calendar)
+  end
 end

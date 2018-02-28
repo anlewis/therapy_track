@@ -49,6 +49,12 @@ class GoogleCalendarService
     service.update_event(current_user.calendar, event.id, event)
   end
 
+  def delete_appointment(id)
+    service = Google::Apis::CalendarV3::CalendarService.new
+    service.authorization = client
+    service.delete_event(current_user.calendar, id)
+  end
+
     private
       attr_reader :current_user, :client, :event_info
 
