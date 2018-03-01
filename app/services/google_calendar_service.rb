@@ -1,5 +1,4 @@
 class GoogleCalendarService
-
   def initialize(current_user)
     @current_user = current_user
   end
@@ -23,19 +22,19 @@ class GoogleCalendarService
   def create_appointment(summary, location, description, start, finish)
     service = Google::Apis::CalendarV3::CalendarService.new
     service.authorization = client
-    #check current_user.calendar.nil?
-    event = Google::Apis::CalendarV3::Event.new({
+    # check current_user.calendar.nil?
+    event = Google::Apis::CalendarV3::Event.new(
       summary: summary,
       location: location,
       description: description,
       start: { date_time: start.to_datetime },
-      end: { date_time: finish.to_datetime },
-    })
+      end: { date_time: finish.to_datetime }
+    )
 
     service.insert_event(current_user.calendar, event)
   end
 
-  def update_appointment(id, summary, location, description, start, finish)   
+  def update_appointment(id, summary, location, description, start, finish)
     service = Google::Apis::CalendarV3::CalendarService.new
     service.authorization = client
     event = service.get_event(current_user.calendar, id)
@@ -55,29 +54,30 @@ class GoogleCalendarService
     service.delete_event(current_user.calendar, id)
   end
 
-    private
-      attr_reader :current_user, :client, :event_info
+  private
 
-      def client
-        Signet::OAuth2::Client.new(user_auth)
-      end
+  attr_reader :current_user, :client, :event_info
 
-      def user_auth
-        {
-          "access_token"  => current_user.oauth_token,
-          "expires_in"    => current_user.oauth_expires_at,
-          "token_type"    => 'Bearer',
-          "refresh_token" => current_user.refresh_token
-        }
-      end
+  def client
+    Signet::OAuth2::Client.new(user_auth)
+  end
 
-      def info 
-        {
-          summary: params['summary'],
-          location: params['location'],
-          description: params['description'],
-          start: params['start'],
-          end: params['end']
-        }
-      end
+  def user_auth
+    {
+      'access_token'  => current_user.oauth_token,
+      'expires_in'    => current_user.oauth_expires_at,
+      'token_type'    => 'Bearer',
+      'refresh_token' => current_user.refresh_token
+    }
+  end
+
+  def info
+    {
+      summary: params['summary'],
+      location: params['location'],
+      description: params['description'],
+      start: params['start'],
+      end: params['end']
+    }
+  end
 end

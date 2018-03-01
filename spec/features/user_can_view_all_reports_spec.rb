@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-feature "A user can see a list of their reports" do
-  scenario "as a logged in user" do
+feature 'A user can see a list of their reports' do
+  scenario 'as a logged in user' do
     user = create(:user)
     report = create(:report, user: user)
     create(:report, user: user)
@@ -14,7 +14,7 @@ feature "A user can see a list of their reports" do
     expect(current_path).to eq reports_path
     expect(page).to have_content 'Report History'
     expect(user.reports.count).to eq 2
-    
+
     expect(page).to have_content 'Basic Medical Information'
     expect(page).to have_content "O2 Saturation: #{medical_report.oxygen} %"
     expect(page).to have_content "Temperature: #{medical_report.temperature} F"
