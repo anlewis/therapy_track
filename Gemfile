@@ -5,21 +5,21 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'autoprefixer-rails'
+gem 'bootstrap', '~> 4.0.0'
 gem 'coffee-rails', '~> 4.2'
+gem 'coveralls', require: false
 gem 'figaro'
-gem 'omniauth-google-oauth2'
 gem 'google-api-client', require: 'google/apis/calendar_v3'
+gem 'jquery-rails'
+gem 'omniauth-google-oauth2'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.5'
 gem 'rubocop', '~> 0.52.1', require: false
-gem 'jquery-rails'
 gem 'sass-rails', '~> 5.0'
-gem 'bootstrap', '~> 4.0.0'
-gem 'autoprefixer-rails'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
-gem 'coveralls', require: false
 
 group :development, :test do
   gem 'capybara'
