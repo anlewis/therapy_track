@@ -4,3 +4,19 @@ Metrics/LineLength:
   Max: 80
   IgnoredPatterns: ['\A#']
 
+Documentation:
+  Enabled: false
+
+Style:
+  EnforcedStyle: expanded
+
+AllCops:
+  Include:
+    - '**/Rakefile'
+    - '**/config.ru'
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'spec/**/*'
+
