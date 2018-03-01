@@ -1,0 +1,24 @@
+<div align="center">
+  <h1>Report History</h1>
+  <ul class="list-group">
+  <% current_user.reports.each do |report| %>
+    <li class="list-group-item list-group-item-dark">
+      <h3>Wellness Report</h3>
+      <h6>Generated on <%= get_date(report.created_at) %></h6>
+
+      <% if report.medical_report %>
+        <div class="card mb-3" style="max-width: 70rem;">
+          <h3 class="card-header">Basic Medical Information</h3>
+          <div class="card-body">
+            <h5 class="card-text" align="left">O2 Saturation: <%= report.medical_report.oxygen %> %</h5>
+            <h5 class="card-text" align="left">Temperature: <%= report.medical_report.temperature %> F</h5>
+            <h5 class="card-text" align="left">Weight: <%= report.medical_report.weight %> Ibs</h5>
+            <h5 class="card-text" align="left">Blood Pressure: <%= report.medical_report.systolic %>/<%= report.medical_report.diastolic %> mmHg</h5>
+            <h5 class="card-text" align="left">Appointment Notes: <%= report.medical_report.notes %></h5>
+          </div>
+        </div>
+      <% end %>
+    </li>
+  <% end %>
+  </ul>
+</div>
