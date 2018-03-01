@@ -19,6 +19,22 @@
         null,
         null
       ],
+      "/Users/annalewis/turing/3module/projects/therapy_track/app/models/report.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/annalewis/turing/3module/projects/therapy_track/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/annalewis/turing/3module/projects/therapy_track/app/models/medical_report.rb": [
+        1,
+        1,
+        null
+      ],
       "/Users/annalewis/turing/3module/projects/therapy_track/app/controllers/application_controller.rb": [
         1,
         1,
@@ -35,30 +51,24 @@
         null,
         null
       ],
-      "/Users/annalewis/turing/3module/projects/therapy_track/app/controllers/about_controller.rb": [
+      "/Users/annalewis/turing/3module/projects/therapy_track/app/controllers/reports_controller.rb": [
         1,
         1,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
         null,
         null
       ],
       "/Users/annalewis/turing/3module/projects/therapy_track/app/mailers/application_mailer.rb": [
         0,
-        0,
-        0,
-        0
-      ],
-      "/Users/annalewis/turing/3module/projects/therapy_track/app/models/report.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/annalewis/turing/3module/projects/therapy_track/app/models/medical_report.rb": [
-        0,
-        0,
-        0
-      ],
-      "/Users/annalewis/turing/3module/projects/therapy_track/app/models/application_record.rb": [
         0,
         0,
         0
@@ -131,7 +141,9 @@
         0,
         0
       ],
-      "/Users/annalewis/turing/3module/projects/therapy_track/app/controllers/reports_controller.rb": [
+      "/Users/annalewis/turing/3module/projects/therapy_track/app/controllers/sessions_controller.rb": [
+        0,
+        0,
         0,
         0,
         0,
@@ -144,16 +156,7 @@
         0,
         0
       ],
-      "/Users/annalewis/turing/3module/projects/therapy_track/app/controllers/sessions_controller.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
+      "/Users/annalewis/turing/3module/projects/therapy_track/app/controllers/about_controller.rb": [
         0,
         0,
         0,
@@ -297,6 +300,6 @@
         0
       ]
     },
-    "timestamp": 1519875521
+    "timestamp": 1519877522
   }
 }
