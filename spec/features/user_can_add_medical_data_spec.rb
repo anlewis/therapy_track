@@ -8,8 +8,8 @@ feature 'A user can add basic medical info for their report' do
     visit '/'
     click_on 'Generate New Wellness Report'
 
-    page.fill_in 'medical_report[oxygen]',      with: 96
-    page.fill_in 'medical_report[temperature]',  with: 98
+    page.fill_in 'medical_report[oxygen]', with: 96
+    page.fill_in 'medical_report[temperature]', with: 98
     page.fill_in 'medical_report[systolic]',    with: 90
     page.fill_in 'medical_report[diastolic]',   with: 130
     page.fill_in 'medical_report[weight]',      with: 120

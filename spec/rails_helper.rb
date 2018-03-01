@@ -12,7 +12,7 @@ require 'webmock/rspec'
 require 'vcr'
 
 VCR.configure do |config|
-  config.cassette_library_dir = "spec/cassettes"
+  config.cassette_library_dir = 'spec/cassettes'
   config.hook_into :webmock
   config.filter_sensitive_data ('<fakeGoogleClientId>') { ENV['google_client_id'] }
   config.filter_sensitive_data ('<fakeGoogleClientSecret>') { ENV['google_client_secret'] }
@@ -35,20 +35,20 @@ end
 def stub_omniauth
   # set OmniAuth to run in test mode
   OmniAuth.config.test_mode = true
-  OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
-    "provider"=>"google_oauth2",
-    "uid"=>ENV['uid'],
-    "info"=>{
-      "name"=>"Anna Lewis",
-      "email"=>"anna.noel.lewis@gmail.com",
-      "first_name"=>"Anna",
-      "last_name"=>"Lewis",
-      "image"=>"https://lh6.googleusercontent.com/-V7qtjsjLs6o/AAAAAAAAAAI/AAAAAAAAAAk/HuQ6ZImHSPU/photo.jpg"},
-      "credentials"=>{
-        "token"=>ENV['token'],
-        "expires_at"=>1519532155,
-        "expires"=>true
-      }
+  OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new(
+    'provider' => 'google_oauth2',
+    'uid' => ENV['uid'],
+    'info' => {
+      'name' => 'Anna Lewis',
+      'email' => 'anna.noel.lewis@gmail.com',
+      'first_name' => 'Anna',
+      'last_name' => 'Lewis',
+      'image' => 'https://lh6.googleusercontent.com/-V7qtjsjLs6o/AAAAAAAAAAI/AAAAAAAAAAk/HuQ6ZImHSPU/photo.jpg'
+    },
+    'credentials' => {
+      'token' => ENV['token'],
+      'expires_at' => 1_519_532_155,
+      'expires' => true
     }
   )
 end

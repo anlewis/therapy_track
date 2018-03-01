@@ -11,7 +11,8 @@ class MedicalReportsController < ApplicationController
   end
 
   private
-    def medical_report_params
-      params.require(:medical_report).permit(:oxygen, :temperature, :systolic, :diastolic, :weight, :notes)
-    end
+
+  def medical_report_params
+    params.require(:medical_report).permit(:oxygen, :temperature, :systolic, :diastolic, :weight, :notes)
+  end
 end

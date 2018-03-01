@@ -5,6 +5,6 @@ FactoryBot.define do
     weight 1
     systolic 1
     diastolic 1
-    notes "MyText"
+    notes 'MyText'
   end
 end
