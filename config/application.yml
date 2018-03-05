@@ -4,7 +4,10 @@ google_client_secret: 0rdpYDUOWZWlwLTYJVPeY46E
 coveralls_repo_token: Ww4VWorYRpi1dJDDxGleMGNz4KJjUJSwO
 
 #for testing:
-oauth_token: ya29.GlxvBXD6-Y-breXHvjphPHM5_BsCiviyftMJrawrd63sDndENY3m9VF_zzeDMbA9FQE49hCg4tHurUIHSBQ3ivT7mwFhg12BLhnVOIkcKKrJ-Q2snYYnXXcS8YSQMw
-uid: "106325757403341027427"
-calendar: 7i483dldd3apdnkk2nnbg63jno@group.calendar.google.com
-refresh_token: 
+provider: "google_oauth2"
+uid: "110274317438849911869"
+name: "Anna Lewis"
+oauth_token: ya29.Glt1Bbsmgp4VZHpLhiZemgcpqsd4-7ypImUMwHeAZL7d_44BSKiOqk9GIy0oOkIN3PjrEFc0qRNDcUBG5KFVTqgnhp8d7RQSsdCfm45U8UsBVifck90uz8LaKpPb
+oauth_expires_at: "2018-03-05 13:16:25 -0600"
+refresh_token: "1/lPvUN1qNIiUclrmzrsUWzuGeQJBhBZewsp_LEiYHFKA"
+calendar: "u3nsnqr835a0dhooov7t3cf9m4@group.calendar.google.com"
