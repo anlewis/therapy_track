@@ -16,7 +16,7 @@ describe GoogleCalendarService do
                               'here',
                               'about this appointment',
                               start_time,
-                              end_time
+                              end_time,
                              )
         expect(created_appointment.summary).to eq 'test appointment'
         expect(created_appointment.location).to eq 'here'
