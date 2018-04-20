@@ -4,21 +4,25 @@ describe GoogleCalendarService do
   describe "instance methods" do
     it "#create_appointment" do
         user = create(:user)
-        binding.pry
         stub_omniauth
-        binding.pry
         visit root_path
         click_link 'Sign In with Google'
-        save_and_open_page
+
         google_calendar_service = GoogleCalendarService.new(user)
+        start_time = Time.zone.parse('2002-01-01 04:00:00 -0000')
+        end_time = Time.zone.parse('2002-01-01 06:00:00 -0000')
         created_appointment = google_calendar_service
-         .create_appointment('test appointment',
-                            'here',
-                            'about this appointment',
-                            Time.zone.parse('2002-01-01 04:00:00 -0000'),
-                            Time.zone.parse('2002-01-01 06:00:00 -0000')
-                           )
-        expect(created_appointment).to contain('test appointment')\
+          .create_appointment('test appointment',
+                              'here',
+                              'about this appointment',
+                              start_time,
+                              end_time
+                             )
+        expect(created_appointment.summary).to eq 'test appointment'
+        expect(created_appointment.location).to eq 'here'
+        expect(created_appointment.description).to eq 'about this appointment'
+        expect(created_appointment.start.date_time).to eq start_time
+        expect(created_appointment.end.date_time).to eq end_time
     end
     it "#all_appointments" do
       #recieve a list of all appointments

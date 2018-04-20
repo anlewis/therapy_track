@@ -47,7 +47,7 @@ def stub_omniauth
       'image' => 'https://lh6.googleusercontent.com/-V7qtjsjLs6o/AAAAAAAAAAI/AAAAAAAAAAk/HuQ6ZImHSPU/photo.jpg'
     },
     'credentials' => {
-      'token' => ENV['token'],
+      'token' => ENV['oauth_token'],
       'expires_at' => 1_519_532_155,
       'expires' => true
     }
