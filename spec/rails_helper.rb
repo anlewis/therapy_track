@@ -13,6 +13,7 @@ require 'vcr'
 
 VCR.configure do |config|
   config.cassette_library_dir = 'spec/cassettes'
+  config.allow_http_connections_when_no_cassette = true
   config.hook_into :webmock
   config.filter_sensitive_data ('<fakeGoogleClientId>') { ENV['google_client_id'] }
   config.filter_sensitive_data ('<fakeGoogleClientSecret>') { ENV['google_client_secret'] }
