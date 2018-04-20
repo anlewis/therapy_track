@@ -5,5 +5,6 @@ Rails.application.config.middleware.use OmniAuth::Builder do
             ENV['google_client_id'],
             ENV['google_client_secret'],
             scope: 'email,profile,calendar',
-            provider_ignores_state: true
+            provider_ignores_state: true,
+            additional_parameters: {"access_type" => "offline"}
 end
