@@ -84,8 +84,28 @@ describe GoogleCalendarService do
         expect(updated_appointment.location).to eq 'there'
         expect(updated_appointment.description).to eq 'other stuff about this appointment'
     end
-    
+
     it "#delete_appointment" do
+      user = create(:user)
+        stub_omniauth
+        visit root_path
+        click_link 'Sign In with Google'
+
+        google_calendar_service = GoogleCalendarService.new(user)
+        start_time = Time.zone.parse('2002-01-01 04:00:00 -0000')
+        end_time = Time.zone.parse('2002-01-01 06:00:00 -0000')
+        created_appointment = google_calendar_service
+          .create_appointment('delete this appointment',
+                              'here',
+                              'about this appointment',
+                              start_time,
+                              end_time,
+                             )
+        expect(created_appointment.summary).to eq google_calendar_service.all_appointments.items.last.summary
+
+        google_calendar_service.delete_appointment(created_appointment.id)
+
+        expect(created_appointment.summary).not_to eq google_calendar_service.all_appointments.items.last.summary
     end
   end
 
