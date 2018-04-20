@@ -108,38 +108,4 @@ describe GoogleCalendarService do
         expect(created_appointment.summary).not_to eq google_calendar_service.all_appointments.items.last.summary
     end
   end
-
-  private
-    attr_reader :current_user, :client, :event_info
-
-    def client
-      Signet::OAuth2::Client.new(user_auth)
-    end
-
-    def user_auth
-      {
-        'client_id'     => ENV['google_client_id'],
-        'client_secret' => ENV['google_client_secret'],
-        'access_token'  => user.oauth_token,
-        'expires_in'    => user.oauth_expires_at,
-        'token_type'    => 'Bearer',
-        'refresh_token' => user.refresh_token,
-        scope: 'email,profile,calendar',
-        provider_ignores_state: true,
-        additional_parameters: {"access_type" => "offline"}
-      }
-    end
-
-    def info
-      {
-        summary: params['summary'],
-        location: params['location'],
-        description: params['description'],
-        start: params['start'],
-        end: params['end'],
-        additional_parameters: {"access_type" => "offline",         # offline access
-                                "include_granted_scopes" => "true"  # incremental auth
-                               }
-      }
-    end
 end
