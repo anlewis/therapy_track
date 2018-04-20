@@ -6,7 +6,7 @@ class GoogleCalendarService
   def all_appointments
     service = Google::Apis::CalendarV3::CalendarService.new
     service.authorization = client
-
+    
     if current_user.calendar.nil?
       calendar = Google::Apis::CalendarV3::Calendar.new(
         summary: 'TherapyTrack'
