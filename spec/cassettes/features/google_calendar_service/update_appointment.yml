@@ -1,0 +1,2587 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://accounts.google.com/o/oauth2/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=refresh_token&refresh_token=1%2FwA_kNbH0Zx7pJBBGcISXmkUn_mlM7N7X7v7ej0N6y3Q&client_id=<fakeGoogleClientId>&client_secret=<fakeGoogleClientSecret>
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Mon, 01 Jan 1990 00:00:00 GMT
+      Date:
+      - Sat, 21 Apr 2018 01:11:10 GMT
+      Content-Disposition:
+      - attachment; filename="json.txt"; filename*=UTF-8''json.txt
+      Server:
+      - ESF
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alt-Svc:
+      - hq=":443"; ma=2592000; quic=51303433; quic=51303432; quic=51303431; quic=51303339;
+        quic=51303335,quic=":443"; ma=2592000; v="43,42,41,39,35"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "access_token" : "ya29.GlykBaYgTKDqZ1089YTtKz65SMmirVzo2ko3OxysA4Lz6oRT3b1jZXwlmmRM2UDcwpuTBvL8kC5yzT27ezT5zi_ufYovCmHeZQlsQ_TDfKUtz91-zsLYRONVz_77wA",
+          "expires_in" : 3600,
+          "id_token" : "eyJhbGciOiJSUzI1NiIsImtpZCI6IjU0MjViYjg0NjE2ZWJmOTczYWU4MGJjNjJhYzY4OGQyYTcyNzE1YWQifQ.eyJhenAiOiIxMDczMjcwMDE5MjA1LTcwMjVmc2h0cWlsOGo5aDYxMDFibzZxams5YW9vam40LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiMTA3MzI3MDAxOTIwNS03MDI1ZnNodHFpbDhqOWg2MTAxYm82cWprOWFvb2puNC5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjExMzA3ODAyNjMxODI2MTAxMTM5NiIsImVtYWlsIjoiYW5uYS5ub2VsLmxld2lzQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdF9oYXNoIjoiTU1jLV9sc2laanlrNFgxeWx0akZBUSIsImV4cCI6MTUyNDI3NjY3MCwiaXNzIjoiYWNjb3VudHMuZ29vZ2xlLmNvbSIsImlhdCI6MTUyNDI3MzA3MH0.X9fdVNTbPKDW0zSki3FNbtESdtPjKf1mkMD1bxm5BuwiajRZHakwFyeGGrftR97rjCQp3-4XvFgvpJ31wlxxM2y0RU0bb2lMKDl_fZ6P7PUnhdvE2tgd0mUmgNArc74rs4KKcXweB9l1YlYhLaDpj3_brhy4v-zOwxDTCReofCpvXe4lSVM_OZUyQJGqrLe-y7BNUlNJmBqu8SQGuvNORwsm5AVRANamrsQ5p24-AQHegC-CmLopxxuHhb-v-U3i2eFxROmyBLFjDYFUYQ2OSMhZQ05prG3MAnZ4UDaiM6okB90tunTIsIAaHTTyTfwaYw7zyO25or846IJlpb_RXw",
+          "token_type" : "Bearer"
+        }
+    http_version: 
+  recorded_at: Sat, 21 Apr 2018 01:11:10 GMT
+- request:
+    method: post
+    uri: https://www.googleapis.com/calendar/v3/calendars/<fakeCalendar>/events
+    body:
+      encoding: UTF-8
+      string: '{"description":"about this appointment","end":{"dateTime":"2001-12-31T23:00:00.000-07:00"},"location":"here","start":{"dateTime":"2001-12-31T21:00:00.000-07:00"},"summary":"test
+        appointment"}'
+    headers:
+      User-Agent:
+      - unknown/0.0.0 google-api-ruby-client/0.20.1 Mac OS X/10.13.4 (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Sat, 21 Apr 2018 01:11:10 GMT
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer ya29.GlykBaYgTKDqZ1089YTtKz65SMmirVzo2ko3OxysA4Lz6oRT3b1jZXwlmmRM2UDcwpuTBvL8kC5yzT27ezT5zi_ufYovCmHeZQlsQ_TDfKUtz91-zsLYRONVz_77wA
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Mon, 01 Jan 1990 00:00:00 GMT
+      Date:
+      - Sat, 21 Apr 2018 01:11:11 GMT
+      Etag:
+      - '"3048546142570000"'
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alt-Svc:
+      - hq=":443"; ma=2592000; quic=51303433; quic=51303432; quic=51303431; quic=51303339;
+        quic=51303335,quic=":443"; ma=2592000; v="43,42,41,39,35"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "calendar#event",
+         "etag": "\"3048546142570000\"",
+         "id": "osatgnben82taj0b28osjpjgkc",
+         "status": "confirmed",
+         "htmlLink": "https://www.google.com/calendar/event?eid=b3NhdGduYmVuODJ0YWowYjI4b3NqcGpna2MgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+         "created": "2018-04-21T01:11:11.000Z",
+         "updated": "2018-04-21T01:11:11.285Z",
+         "summary": "test appointment",
+         "description": "about this appointment",
+         "location": "here",
+         "creator": {
+          "email": "anna.noel.lewis@gmail.com"
+         },
+         "organizer": {
+          "email": "<fakeCalendar>",
+          "displayName": "TherapyTrack",
+          "self": true
+         },
+         "start": {
+          "dateTime": "2002-01-01T04:00:00Z"
+         },
+         "end": {
+          "dateTime": "2002-01-01T06:00:00Z"
+         },
+         "iCalUID": "osatgnben82taj0b28osjpjgkc@google.com",
+         "sequence": 0,
+         "reminders": {
+          "useDefault": true
+         }
+        }
+    http_version: 
+  recorded_at: Sat, 21 Apr 2018 01:11:11 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/calendar/v3/calendars/<fakeCalendar>/events/osatgnben82taj0b28osjpjgkc
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - unknown/0.0.0 google-api-ruby-client/0.20.1 Mac OS X/10.13.4 (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Sat, 21 Apr 2018 01:11:11 GMT
+      Authorization:
+      - Bearer ya29.GlykBaYgTKDqZ1089YTtKz65SMmirVzo2ko3OxysA4Lz6oRT3b1jZXwlmmRM2UDcwpuTBvL8kC5yzT27ezT5zi_ufYovCmHeZQlsQ_TDfKUtz91-zsLYRONVz_77wA
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Sat, 21 Apr 2018 01:11:11 GMT
+      Date:
+      - Sat, 21 Apr 2018 01:11:11 GMT
+      Cache-Control:
+      - private, max-age=0, must-revalidate, no-transform
+      Etag:
+      - '"3048546142570000"'
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alt-Svc:
+      - hq=":443"; ma=2592000; quic=51303433; quic=51303432; quic=51303431; quic=51303339;
+        quic=51303335,quic=":443"; ma=2592000; v="43,42,41,39,35"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "calendar#event",
+         "etag": "\"3048546142570000\"",
+         "id": "osatgnben82taj0b28osjpjgkc",
+         "status": "confirmed",
+         "htmlLink": "https://www.google.com/calendar/event?eid=b3NhdGduYmVuODJ0YWowYjI4b3NqcGpna2MgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+         "created": "2018-04-21T01:11:11.000Z",
+         "updated": "2018-04-21T01:11:11.285Z",
+         "summary": "test appointment",
+         "description": "about this appointment",
+         "location": "here",
+         "creator": {
+          "email": "anna.noel.lewis@gmail.com"
+         },
+         "organizer": {
+          "email": "<fakeCalendar>",
+          "displayName": "TherapyTrack",
+          "self": true
+         },
+         "start": {
+          "dateTime": "2002-01-01T04:00:00Z"
+         },
+         "end": {
+          "dateTime": "2002-01-01T06:00:00Z"
+         },
+         "iCalUID": "osatgnben82taj0b28osjpjgkc@google.com",
+         "sequence": 0,
+         "reminders": {
+          "useDefault": true
+         }
+        }
+    http_version: 
+  recorded_at: Sat, 21 Apr 2018 01:11:11 GMT
+- request:
+    method: put
+    uri: https://www.googleapis.com/calendar/v3/calendars/<fakeCalendar>/events/osatgnben82taj0b28osjpjgkc
+    body:
+      encoding: UTF-8
+      string: '{"created":"2018-04-21T01:11:11.000+00:00","creator":{"email":"anna.noel.lewis@gmail.com"},"description":"other
+        stuff about this appointment","end":{"dateTime":"2001-12-31T23:00:00.000-07:00","timeZone":"America/Denver"},"etag":"\"3048546142570000\"","htmlLink":"https://www.google.com/calendar/event?eid=b3NhdGduYmVuODJ0YWowYjI4b3NqcGpna2MgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw","iCalUID":"osatgnben82taj0b28osjpjgkc@google.com","id":"osatgnben82taj0b28osjpjgkc","kind":"calendar#event","location":"there","organizer":{"displayName":"TherapyTrack","email":"<fakeCalendar>","self":true},"reminders":{"useDefault":true},"sequence":0,"start":{"dateTime":"2001-12-31T21:00:00.000-07:00","timeZone":"America/Denver"},"status":"confirmed","summary":"updated
+        test appointment","updated":"2018-04-21T01:11:11.285+00:00"}'
+    headers:
+      User-Agent:
+      - unknown/0.0.0 google-api-ruby-client/0.20.1 Mac OS X/10.13.4 (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Sat, 21 Apr 2018 01:11:12 GMT
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer ya29.GlykBaYgTKDqZ1089YTtKz65SMmirVzo2ko3OxysA4Lz6oRT3b1jZXwlmmRM2UDcwpuTBvL8kC5yzT27ezT5zi_ufYovCmHeZQlsQ_TDfKUtz91-zsLYRONVz_77wA
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Mon, 01 Jan 1990 00:00:00 GMT
+      Date:
+      - Sat, 21 Apr 2018 01:11:12 GMT
+      Etag:
+      - '"3048546144168000"'
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alt-Svc:
+      - hq=":443"; ma=2592000; quic=51303433; quic=51303432; quic=51303431; quic=51303339;
+        quic=51303335,quic=":443"; ma=2592000; v="43,42,41,39,35"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "calendar#event",
+         "etag": "\"3048546144168000\"",
+         "id": "osatgnben82taj0b28osjpjgkc",
+         "status": "confirmed",
+         "htmlLink": "https://www.google.com/calendar/event?eid=b3NhdGduYmVuODJ0YWowYjI4b3NqcGpna2MgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+         "created": "2018-04-21T01:11:11.000Z",
+         "updated": "2018-04-21T01:11:12.084Z",
+         "summary": "updated test appointment",
+         "description": "other stuff about this appointment",
+         "location": "there",
+         "creator": {
+          "email": "anna.noel.lewis@gmail.com"
+         },
+         "organizer": {
+          "email": "<fakeCalendar>",
+          "displayName": "TherapyTrack",
+          "self": true
+         },
+         "start": {
+          "dateTime": "2002-01-01T04:00:00Z",
+          "timeZone": "America/Denver"
+         },
+         "end": {
+          "dateTime": "2002-01-01T06:00:00Z",
+          "timeZone": "America/Denver"
+         },
+         "iCalUID": "osatgnben82taj0b28osjpjgkc@google.com",
+         "sequence": 0,
+         "reminders": {
+          "useDefault": true
+         }
+        }
+    http_version: 
+  recorded_at: Sat, 21 Apr 2018 01:11:12 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/calendar/v3/calendars/<fakeCalendar>/events
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - unknown/0.0.0 google-api-ruby-client/0.20.1 Mac OS X/10.13.4 (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Sat, 21 Apr 2018 01:11:12 GMT
+      Authorization:
+      - Bearer ya29.GlykBaYgTKDqZ1089YTtKz65SMmirVzo2ko3OxysA4Lz6oRT3b1jZXwlmmRM2UDcwpuTBvL8kC5yzT27ezT5zi_ufYovCmHeZQlsQ_TDfKUtz91-zsLYRONVz_77wA
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Sat, 21 Apr 2018 01:11:12 GMT
+      Date:
+      - Sat, 21 Apr 2018 01:11:12 GMT
+      Cache-Control:
+      - private, max-age=0, must-revalidate, no-transform
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alt-Svc:
+      - hq=":443"; ma=2592000; quic=51303433; quic=51303432; quic=51303431; quic=51303339;
+        quic=51303335,quic=":443"; ma=2592000; v="43,42,41,39,35"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "calendar#events",
+         "etag": "\"p32g8l36oiv5dk0g\"",
+         "summary": "TherapyTrack",
+         "updated": "2018-04-21T01:11:12.244Z",
+         "timeZone": "UTC",
+         "accessRole": "owner",
+         "defaultReminders": [],
+         "nextSyncToken": "CKCKjNiXytoCEKCKjNiXytoCGAU=",
+         "items": [
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048509802746000\"",
+           "id": "7i03vvkr2r5vlfpo1hlgun163k",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=N2kwM3Z2a3IycjV2bGZwbzFobGd1bjE2M2sgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T20:08:21.000Z",
+           "updated": "2018-04-20T20:08:21.373Z",
+           "summary": "appointment",
+           "description": "do things",
+           "location": "somewhere",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2018-04-20T21:00:00Z"
+           },
+           "end": {
+            "dateTime": "2018-04-20T23:00:00Z"
+           },
+           "iCalUID": "7i03vvkr2r5vlfpo1hlgun163k@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048510308044000\"",
+           "id": "hm0sk3r9qt4teujdbmhaphj96g",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=aG0wc2szcjlxdDR0ZXVqZGJtaGFwaGo5NmcgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T20:12:33.000Z",
+           "updated": "2018-04-20T20:12:34.022Z",
+           "summary": "test appointment",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "hm0sk3r9qt4teujdbmhaphj96g@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048510408250000\"",
+           "id": "f3ppln7klltscjcgnq48tqm1p0",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=ZjNwcGxuN2tsbHRzY2pjZ25xNDh0cW0xcDAgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T20:13:24.000Z",
+           "updated": "2018-04-20T20:13:24.125Z",
+           "summary": "test appointment",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "f3ppln7klltscjcgnq48tqm1p0@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048510466202000\"",
+           "id": "lf7sj38gpoqbii7gau53hnsl4o",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=bGY3c2ozOGdwb3FiaWk3Z2F1NTNobnNsNG8gbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T20:13:53.000Z",
+           "updated": "2018-04-20T20:13:53.101Z",
+           "summary": "test appointment",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "lf7sj38gpoqbii7gau53hnsl4o@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048511245692000\"",
+           "id": "75sf9ovpbocbtor5vreqa9lrmg",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=NzVzZjlvdnBib2NidG9yNXZyZXFhOWxybWcgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T20:20:22.000Z",
+           "updated": "2018-04-20T20:20:22.846Z",
+           "summary": "test appointment",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "75sf9ovpbocbtor5vreqa9lrmg@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048511303852000\"",
+           "id": "sg54hctq1rs74c76baq032hi18",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=c2c1NGhjdHExcnM3NGM3NmJhcTAzMmhpMTggbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T20:20:51.000Z",
+           "updated": "2018-04-20T20:20:51.926Z",
+           "summary": "test appointment",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "sg54hctq1rs74c76baq032hi18@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048511408408000\"",
+           "id": "arbh1irdamjgen5pd3q5hr1gq4",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=YXJiaDFpcmRhbWpnZW41cGQzcTVocjFncTQgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T20:21:44.000Z",
+           "updated": "2018-04-20T20:21:44.204Z",
+           "summary": "test appointment",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "arbh1irdamjgen5pd3q5hr1gq4@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048512007398000\"",
+           "id": "2h7ilsr1ve9ha83qkm9l026njk",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=Mmg3aWxzcjF2ZTloYTgzcWttOWwwMjZuamsgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T20:26:43.000Z",
+           "updated": "2018-04-20T20:26:43.699Z",
+           "summary": "test appointment",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "2h7ilsr1ve9ha83qkm9l026njk@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048513053886000\"",
+           "id": "hh7nnjuq1814grk94e66e341fg",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=aGg3bm5qdXExODE0Z3JrOTRlNjZlMzQxZmcgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T20:35:26.000Z",
+           "updated": "2018-04-20T20:35:26.943Z",
+           "summary": "test appointment",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "hh7nnjuq1814grk94e66e341fg@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048513112598000\"",
+           "id": "aupnjc29cjftg1jcafpsptfjko",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=YXVwbmpjMjljamZ0ZzFqY2FmcHNwdGZqa28gbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T20:35:56.000Z",
+           "updated": "2018-04-20T20:35:56.299Z",
+           "summary": "test appointment",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "aupnjc29cjftg1jcafpsptfjko@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048513113948000\"",
+           "id": "1hcdk3cmanbooih49kh4kgfm0o",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=MWhjZGszY21hbmJvb2loNDlraDRrZ2ZtMG8gbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T20:35:56.000Z",
+           "updated": "2018-04-20T20:35:56.974Z",
+           "summary": "test appointment",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "1hcdk3cmanbooih49kh4kgfm0o@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048513115040000\"",
+           "id": "p41fkqd10n7ene6s35uchld9os",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=cDQxZmtxZDEwbjdlbmU2czM1dWNobGQ5b3MgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T20:35:57.000Z",
+           "updated": "2018-04-20T20:35:57.520Z",
+           "summary": "test appointment",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T08:00:00Z"
+           },
+           "iCalUID": "p41fkqd10n7ene6s35uchld9os@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048513302122000\"",
+           "id": "44tmhjd1r44pgpas8pcn1fogl8",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=NDR0bWhqZDFyNDRwZ3BhczhwY24xZm9nbDggbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T20:37:31.000Z",
+           "updated": "2018-04-20T20:37:31.061Z",
+           "summary": "test appointment",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "44tmhjd1r44pgpas8pcn1fogl8@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048514372384000\"",
+           "id": "muck4vmclgvu19p4oqjh0089ao",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=bXVjazR2bWNsZ3Z1MTlwNG9xamgwMDg5YW8gbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T20:46:26.000Z",
+           "updated": "2018-04-20T20:46:26.192Z",
+           "summary": "test appointment",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "muck4vmclgvu19p4oqjh0089ao@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048514373804000\"",
+           "id": "40nma79nvn1am4apnnf5m8mmn8",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=NDBubWE3OW52bjFhbTRhcG5uZjVtOG1tbjggbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T20:46:26.000Z",
+           "updated": "2018-04-20T20:46:26.902Z",
+           "summary": "test appointment",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T08:00:00Z"
+           },
+           "iCalUID": "40nma79nvn1am4apnnf5m8mmn8@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048514421422000\"",
+           "id": "pu4k7k3skaf9m9qvs71vdrajlk",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=cHU0azdrM3NrYWY5bTlxdnM3MXZkcmFqbGsgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T20:46:50.000Z",
+           "updated": "2018-04-20T20:46:50.711Z",
+           "summary": "test appointment",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "pu4k7k3skaf9m9qvs71vdrajlk@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048514452504000\"",
+           "id": "d5j3j3jc9jd4g2ag1112h0id5s",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=ZDVqM2ozamM5amQ0ZzJhZzExMTJoMGlkNXMgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T20:47:06.000Z",
+           "updated": "2018-04-20T20:47:06.252Z",
+           "summary": "test appointment",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "d5j3j3jc9jd4g2ag1112h0id5s@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048514455570000\"",
+           "id": "t2cl3jgqpr1g5n952d9b1j7u7c",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=dDJjbDNqZ3FwcjFnNW45NTJkOWIxajd1N2MgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T20:47:07.000Z",
+           "updated": "2018-04-20T20:47:07.785Z",
+           "summary": "test appointment",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T08:00:00Z"
+           },
+           "iCalUID": "t2cl3jgqpr1g5n952d9b1j7u7c@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048519749828000\"",
+           "id": "bdlrk2pfm2bdk2saqe73n6qn6s",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=YmRscmsycGZtMmJkazJzYXFlNzNuNnFuNnMgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T21:31:14.000Z",
+           "updated": "2018-04-20T21:31:14.914Z",
+           "summary": "test appointment 1",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "bdlrk2pfm2bdk2saqe73n6qn6s@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048519751352000\"",
+           "id": "b5fkcpn3pqti127ovtg66f6nvk",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=YjVma2NwbjNwcXRpMTI3b3Z0ZzY2ZjZudmsgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T21:31:15.000Z",
+           "updated": "2018-04-20T21:31:15.676Z",
+           "summary": "test appointment 2",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T08:00:00Z"
+           },
+           "iCalUID": "b5fkcpn3pqti127ovtg66f6nvk@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048520247350000\"",
+           "id": "ovpmhoq1kmv64gq7dva5o0qtio",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=b3ZwbWhvcTFrbXY2NGdxN2R2YTVvMHF0aW8gbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T21:35:23.000Z",
+           "updated": "2018-04-20T21:35:23.675Z",
+           "summary": "test appointment 1",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "ovpmhoq1kmv64gq7dva5o0qtio@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048520249274000\"",
+           "id": "9gomsdds490bf5dtfadm6liv4s",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=OWdvbXNkZHM0OTBiZjVkdGZhZG02bGl2NHMgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T21:35:24.000Z",
+           "updated": "2018-04-20T21:35:24.637Z",
+           "summary": "test appointment 2",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T08:00:00Z"
+           },
+           "iCalUID": "9gomsdds490bf5dtfadm6liv4s@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048520340428000\"",
+           "id": "0mocv5kq84klqk8vbmio6u6kcg",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=MG1vY3Y1a3E4NGtscWs4dmJtaW82dTZrY2cgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T21:36:10.000Z",
+           "updated": "2018-04-20T21:36:10.214Z",
+           "summary": "test appointment 1",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "0mocv5kq84klqk8vbmio6u6kcg@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048520341604000\"",
+           "id": "qs6s1ba0p004t5dnk9rq8tun14",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=cXM2czFiYTBwMDA0dDVkbms5cnE4dHVuMTQgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T21:36:10.000Z",
+           "updated": "2018-04-20T21:36:10.802Z",
+           "summary": "test appointment 2",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T08:00:00Z"
+           },
+           "iCalUID": "qs6s1ba0p004t5dnk9rq8tun14@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048520471146000\"",
+           "id": "g1o26k2rcr33fgao265sqqcar0",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=ZzFvMjZrMnJjcjMzZmdhbzI2NXNxcWNhcjAgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T21:37:15.000Z",
+           "updated": "2018-04-20T21:37:15.573Z",
+           "summary": "test appointment 1",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "g1o26k2rcr33fgao265sqqcar0@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048520473284000\"",
+           "id": "me0sm00quam5sqc7c05cp4n3eg",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=bWUwc20wMHF1YW01c3FjN2MwNWNwNG4zZWcgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T21:37:16.000Z",
+           "updated": "2018-04-20T21:37:16.642Z",
+           "summary": "test appointment 2",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T08:00:00Z"
+           },
+           "iCalUID": "me0sm00quam5sqc7c05cp4n3eg@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048520603968000\"",
+           "id": "6i4honc0132m1mt5s2gt4iod84",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=Nmk0aG9uYzAxMzJtMW10NXMyZ3Q0aW9kODQgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T21:38:21.000Z",
+           "updated": "2018-04-20T21:38:21.984Z",
+           "summary": "test appointment 1",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "6i4honc0132m1mt5s2gt4iod84@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048520605138000\"",
+           "id": "cdhiq98nb0hs1n2g6mhif4lojk",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=Y2RoaXE5OG5iMGhzMW4yZzZtaGlmNGxvamsgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T21:38:22.000Z",
+           "updated": "2018-04-20T21:38:22.569Z",
+           "summary": "test appointment 2",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T08:00:00Z"
+           },
+           "iCalUID": "cdhiq98nb0hs1n2g6mhif4lojk@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048523128868000\"",
+           "id": "41gebgvqbi0n5uqpbbi7haj4o0",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=NDFnZWJndnFiaTBuNXVxcGJiaTdoYWo0bzAgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T21:59:24.000Z",
+           "updated": "2018-04-20T21:59:24.434Z",
+           "summary": "test appointment 1",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "41gebgvqbi0n5uqpbbi7haj4o0@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048523130530000\"",
+           "id": "9mvjujkqepvqba89m0396fvjf0",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=OW12anVqa3FlcHZxYmE4OW0wMzk2ZnZqZjAgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T21:59:25.000Z",
+           "updated": "2018-04-20T21:59:25.265Z",
+           "summary": "test appointment 2",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T08:00:00Z"
+           },
+           "iCalUID": "9mvjujkqepvqba89m0396fvjf0@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048523149998000\"",
+           "id": "7b4epcek0cdcctt997hjjiooos",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=N2I0ZXBjZWswY2RjY3R0OTk3aGpqaW9vb3MgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T21:59:34.000Z",
+           "updated": "2018-04-20T21:59:34.999Z",
+           "summary": "test appointment",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "7b4epcek0cdcctt997hjjiooos@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048523151778000\"",
+           "id": "7r0s5lp8jtgp4siipl843gcje4",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=N3IwczVscDhqdGdwNHNpaXBsODQzZ2NqZTQgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T21:59:35.000Z",
+           "updated": "2018-04-20T21:59:35.889Z",
+           "summary": "test appointment 1",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "7r0s5lp8jtgp4siipl843gcje4@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048523152890000\"",
+           "id": "fiera0gcmlgctbas2nnvjr52e0",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=ZmllcmEwZ2NtbGdjdGJhczJubnZqcjUyZTAgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T21:59:36.000Z",
+           "updated": "2018-04-20T21:59:36.445Z",
+           "summary": "test appointment 2",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T08:00:00Z"
+           },
+           "iCalUID": "fiera0gcmlgctbas2nnvjr52e0@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048523924992000\"",
+           "id": "9rrh7v0kn95ri3ieoni0t7qa88",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=OXJyaDd2MGtuOTVyaTNpZW9uaTB0N3FhODggbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T22:06:02.000Z",
+           "updated": "2018-04-20T22:06:02.496Z",
+           "summary": "test appointment",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "9rrh7v0kn95ri3ieoni0t7qa88@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048523927064000\"",
+           "id": "asqn6fq36p9a5dbh8f90cmn8f8",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=YXNxbjZmcTM2cDlhNWRiaDhmOTBjbW44ZjggbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T22:06:03.000Z",
+           "updated": "2018-04-20T22:06:03.532Z",
+           "summary": "test appointment 1",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "asqn6fq36p9a5dbh8f90cmn8f8@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048523928534000\"",
+           "id": "mvg6hst90fd5n1qm7m2ifu8a20",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=bXZnNmhzdDkwZmQ1bjFxbTdtMmlmdThhMjAgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T22:06:04.000Z",
+           "updated": "2018-04-20T22:06:04.267Z",
+           "summary": "test appointment 2",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T08:00:00Z"
+           },
+           "iCalUID": "mvg6hst90fd5n1qm7m2ifu8a20@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048523935652000\"",
+           "id": "571jcnn1k73466clpnmauc5k9g",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=NTcxamNubjFrNzM0NjZjbHBubWF1YzVrOWcgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T22:06:06.000Z",
+           "updated": "2018-04-20T22:06:07.826Z",
+           "summary": "updated test appointment",
+           "description": "other stuff about this appointment",
+           "location": "there",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z",
+            "timeZone": "America/Denver"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z",
+            "timeZone": "America/Denver"
+           },
+           "iCalUID": "571jcnn1k73466clpnmauc5k9g@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048523998550000\"",
+           "id": "ornktgsht42qh68701b9hsev54",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=b3Jua3Rnc2h0NDJxaDY4NzAxYjloc2V2NTQgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T22:06:38.000Z",
+           "updated": "2018-04-20T22:06:39.275Z",
+           "summary": "updated test appointment",
+           "description": "other stuff about this appointment",
+           "location": "there",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z",
+            "timeZone": "America/Denver"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z",
+            "timeZone": "America/Denver"
+           },
+           "iCalUID": "ornktgsht42qh68701b9hsev54@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048524487156000\"",
+           "id": "t7v6rkpoaa2s0setuueu9et21c",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=dDd2NnJrcG9hYTJzMHNldHV1ZXU5ZXQyMWMgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T22:10:43.000Z",
+           "updated": "2018-04-20T22:10:43.578Z",
+           "summary": "test appointment",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "t7v6rkpoaa2s0setuueu9et21c@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048524488978000\"",
+           "id": "1kq11hho368ngl1oe4efq5rkrg",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=MWtxMTFoaG8zNjhuZ2wxb2U0ZWZxNXJrcmcgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T22:10:44.000Z",
+           "updated": "2018-04-20T22:10:44.489Z",
+           "summary": "test appointment 1",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "1kq11hho368ngl1oe4efq5rkrg@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048524490076000\"",
+           "id": "spe2doki3q73m9p27mgm5ud22o",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=c3BlMmRva2kzcTczbTlwMjdtZ201dWQyMm8gbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T22:10:44.000Z",
+           "updated": "2018-04-20T22:10:45.038Z",
+           "summary": "test appointment 2",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T08:00:00Z"
+           },
+           "iCalUID": "spe2doki3q73m9p27mgm5ud22o@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048524493792000\"",
+           "id": "bua3rc7u429msumgv2m6h6oc9s",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=YnVhM3JjN3U0Mjltc3VtZ3YybTZoNm9jOXMgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T22:10:46.000Z",
+           "updated": "2018-04-20T22:10:46.896Z",
+           "summary": "updated test appointment",
+           "description": "other stuff about this appointment",
+           "location": "there",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z",
+            "timeZone": "America/Denver"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z",
+            "timeZone": "America/Denver"
+           },
+           "iCalUID": "bua3rc7u429msumgv2m6h6oc9s@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048524531842000\"",
+           "id": "dsm3p4etlvipg5gup3irnlgne4",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=ZHNtM3A0ZXRsdmlwZzVndXAzaXJubGduZTQgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T22:11:05.000Z",
+           "updated": "2018-04-20T22:11:05.921Z",
+           "summary": "test appointment",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "dsm3p4etlvipg5gup3irnlgne4@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048524533326000\"",
+           "id": "jcd6j352f0dfl7hpj18mp7v85k",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=amNkNmozNTJmMGRmbDdocGoxOG1wN3Y4NWsgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T22:11:06.000Z",
+           "updated": "2018-04-20T22:11:06.663Z",
+           "summary": "test appointment 1",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "jcd6j352f0dfl7hpj18mp7v85k@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048524534398000\"",
+           "id": "41muk9s1pm6f44o7kq9i5s4e8k",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=NDFtdWs5czFwbTZmNDRvN2txOWk1czRlOGsgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T22:11:07.000Z",
+           "updated": "2018-04-20T22:11:07.199Z",
+           "summary": "test appointment 2",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T08:00:00Z"
+           },
+           "iCalUID": "41muk9s1pm6f44o7kq9i5s4e8k@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048524539060000\"",
+           "id": "ngrg3tkp5thb8t8l39bso63dcc",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=bmdyZzN0a3A1dGhiOHQ4bDM5YnNvNjNkY2MgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T22:11:08.000Z",
+           "updated": "2018-04-20T22:11:09.530Z",
+           "summary": "updated test appointment",
+           "description": "other stuff about this appointment",
+           "location": "there",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z",
+            "timeZone": "America/Denver"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z",
+            "timeZone": "America/Denver"
+           },
+           "iCalUID": "ngrg3tkp5thb8t8l39bso63dcc@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048524658008000\"",
+           "id": "8mc4k64450kc01t4jbgoiueg8c",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=OG1jNGs2NDQ1MGtjMDF0NGpiZ29pdWVnOGMgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T22:12:08.000Z",
+           "updated": "2018-04-20T22:12:09.004Z",
+           "summary": "test appointment",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "8mc4k64450kc01t4jbgoiueg8c@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048524659220000\"",
+           "id": "cl5bmhhtokig2ao5l9ut6iqb2g",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=Y2w1Ym1oaHRva2lnMmFvNWw5dXQ2aXFiMmcgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T22:12:09.000Z",
+           "updated": "2018-04-20T22:12:09.610Z",
+           "summary": "test appointment 1",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "cl5bmhhtokig2ao5l9ut6iqb2g@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048524660922000\"",
+           "id": "370jbm17ln1lhe3tdsojqs96s8",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=MzcwamJtMTdsbjFsaGUzdGRzb2pxczk2czggbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T22:12:10.000Z",
+           "updated": "2018-04-20T22:12:10.461Z",
+           "summary": "test appointment 2",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T08:00:00Z"
+           },
+           "iCalUID": "370jbm17ln1lhe3tdsojqs96s8@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048524664850000\"",
+           "id": "o76oiit07ipv6t9l30fjmco8o4",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=bzc2b2lpdDA3aXB2NnQ5bDMwZmptY284bzQgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T22:12:11.000Z",
+           "updated": "2018-04-20T22:12:12.425Z",
+           "summary": "updated test appointment",
+           "description": "other stuff about this appointment",
+           "location": "there",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z",
+            "timeZone": "America/Denver"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z",
+            "timeZone": "America/Denver"
+           },
+           "iCalUID": "o76oiit07ipv6t9l30fjmco8o4@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048524984612000\"",
+           "id": "u35e9kd7jvm9k6gcn823rdvhvg",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=dTM1ZTlrZDdqdm05azZnY244MjNyZHZodmcgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T22:14:52.000Z",
+           "updated": "2018-04-20T22:14:52.306Z",
+           "summary": "test appointment",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "u35e9kd7jvm9k6gcn823rdvhvg@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048524986178000\"",
+           "id": "l929at9h4peqqv01qp4fopunvs",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=bDkyOWF0OWg0cGVxcXYwMXFwNGZvcHVudnMgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T22:14:53.000Z",
+           "updated": "2018-04-20T22:14:53.089Z",
+           "summary": "test appointment 1",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "l929at9h4peqqv01qp4fopunvs@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048524988090000\"",
+           "id": "nbc08el07h4tr96nme9slgqnl8",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=bmJjMDhlbDA3aDR0cjk2bm1lOXNsZ3FubDggbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T22:14:53.000Z",
+           "updated": "2018-04-20T22:14:54.045Z",
+           "summary": "test appointment 2",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T08:00:00Z"
+           },
+           "iCalUID": "nbc08el07h4tr96nme9slgqnl8@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048524993552000\"",
+           "id": "gf7mhdt1mmcigsrbk6lq2gjaug",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=Z2Y3bWhkdDFtbWNpZ3NyYms2bHEyZ2phdWcgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T22:14:55.000Z",
+           "updated": "2018-04-20T22:14:56.776Z",
+           "summary": "updated test appointment",
+           "description": "other stuff about this appointment",
+           "location": "there",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z",
+            "timeZone": "America/Denver"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z",
+            "timeZone": "America/Denver"
+           },
+           "iCalUID": "gf7mhdt1mmcigsrbk6lq2gjaug@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048525983470000\"",
+           "id": "a59dntnba1abggbsj49puc5q3g",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=YTU5ZG50bmJhMWFiZ2dic2o0OXB1YzVxM2cgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T22:23:11.000Z",
+           "updated": "2018-04-20T22:23:11.735Z",
+           "summary": "test appointment",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "a59dntnba1abggbsj49puc5q3g@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048525984038000\"",
+           "id": "cfjumqmsg3hiaajfaqqv415joc",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=Y2ZqdW1xbXNnM2hpYWFqZmFxcXY0MTVqb2MgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T22:23:11.000Z",
+           "updated": "2018-04-20T22:23:12.019Z",
+           "summary": "test appointment 1",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "cfjumqmsg3hiaajfaqqv415joc@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048525984498000\"",
+           "id": "m3obtssfgni05op58r4iqva7p8",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=bTNvYnRzc2ZnbmkwNW9wNThyNGlxdmE3cDggbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T22:23:12.000Z",
+           "updated": "2018-04-20T22:23:12.249Z",
+           "summary": "test appointment 2",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T08:00:00Z"
+           },
+           "iCalUID": "m3obtssfgni05op58r4iqva7p8@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048525986570000\"",
+           "id": "dkk9rduv9sioe3s920fcufvnf4",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=ZGtrOXJkdXY5c2lvZTNzOTIwZmN1ZnZuZjQgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-20T22:23:12.000Z",
+           "updated": "2018-04-20T22:23:13.285Z",
+           "summary": "updated test appointment",
+           "description": "other stuff about this appointment",
+           "location": "there",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z",
+            "timeZone": "America/Denver"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z",
+            "timeZone": "America/Denver"
+           },
+           "iCalUID": "dkk9rduv9sioe3s920fcufvnf4@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048543832194000\"",
+           "id": "0i0parki3k6uqunp4vf8hpuu68",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=MGkwcGFya2kzazZ1cXVucDR2ZjhocHV1NjggbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-21T00:51:56.000Z",
+           "updated": "2018-04-21T00:51:56.097Z",
+           "summary": "test appointment",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "0i0parki3k6uqunp4vf8hpuu68@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048543857468000\"",
+           "id": "suocpr84smjm8e7dsliaauv6vs",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=c3VvY3ByODRzbWptOGU3ZHNsaWFhdXY2dnMgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-21T00:52:08.000Z",
+           "updated": "2018-04-21T00:52:08.734Z",
+           "summary": "test appointment 1",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "suocpr84smjm8e7dsliaauv6vs@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048543859620000\"",
+           "id": "a9gircfskfha4vbv48mgo1epao",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=YTlnaXJjZnNrZmhhNHZidjQ4bWdvMWVwYW8gbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-21T00:52:09.000Z",
+           "updated": "2018-04-21T00:52:09.810Z",
+           "summary": "test appointment",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "a9gircfskfha4vbv48mgo1epao@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048543861628000\"",
+           "id": "vb4dv4h9k1hhcta7v4orcm3cjk",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=dmI0ZHY0aDlrMWhoY3RhN3Y0b3JjbTNjamsgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-21T00:52:10.000Z",
+           "updated": "2018-04-21T00:52:10.814Z",
+           "summary": "delete this appointment",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "vb4dv4h9k1hhcta7v4orcm3cjk@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048544696000000\"",
+           "id": "c82r34uiaf2mrjmn2p4v134ie4",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=YzgycjM0dWlhZjJtcmptbjJwNHYxMzRpZTQgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-21T00:59:07.000Z",
+           "updated": "2018-04-21T00:59:08.000Z",
+           "summary": "test appointment 1",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "c82r34uiaf2mrjmn2p4v134ie4@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048544697014000\"",
+           "id": "4rs0hfgr8mh5d4cnu502s7l99o",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=NHJzMGhmZ3I4bWg1ZDRjbnU1MDJzN2w5OW8gbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-21T00:59:08.000Z",
+           "updated": "2018-04-21T00:59:08.507Z",
+           "summary": "test appointment 2",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T08:00:00Z"
+           },
+           "iCalUID": "4rs0hfgr8mh5d4cnu502s7l99o@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048544719100000\"",
+           "id": "vvdihljd4sdaa4mlpk8iurpsrg",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=dnZkaWhsamQ0c2RhYTRtbHBrOGl1cnBzcmcgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-21T00:59:19.000Z",
+           "updated": "2018-04-21T00:59:19.550Z",
+           "summary": "test appointment",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "vvdihljd4sdaa4mlpk8iurpsrg@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048544724042000\"",
+           "id": "ka430qdb6hv46mpe9jn38mvslk",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=a2E0MzBxZGI2aHY0Nm1wZTlqbjM4bXZzbGsgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-21T00:59:21.000Z",
+           "updated": "2018-04-21T00:59:22.021Z",
+           "summary": "updated test appointment",
+           "description": "other stuff about this appointment",
+           "location": "there",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z",
+            "timeZone": "America/Denver"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z",
+            "timeZone": "America/Denver"
+           },
+           "iCalUID": "ka430qdb6hv46mpe9jn38mvslk@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048546136322000\"",
+           "id": "mrtp3pk9v10bbvn0eonst1ljo8",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=bXJ0cDNwazl2MTBiYnZuMGVvbnN0MWxqbzggbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-21T01:11:08.000Z",
+           "updated": "2018-04-21T01:11:08.161Z",
+           "summary": "test appointment",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "mrtp3pk9v10bbvn0eonst1ljo8@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048546138272000\"",
+           "id": "9hpobjaokdjoceup1iaosraek0",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=OWhwb2JqYW9rZGpvY2V1cDFpYW9zcmFlazAgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-21T01:11:09.000Z",
+           "updated": "2018-04-21T01:11:09.136Z",
+           "summary": "test appointment 1",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "iCalUID": "9hpobjaokdjoceup1iaosraek0@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048546139332000\"",
+           "id": "d8vuf35e0eopv310tsco54qgko",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=ZDh2dWYzNWUwZW9wdjMxMHRzY281NHFna28gbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-21T01:11:09.000Z",
+           "updated": "2018-04-21T01:11:09.666Z",
+           "summary": "test appointment 2",
+           "description": "about this appointment",
+           "location": "here",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T06:00:00Z"
+           },
+           "end": {
+            "dateTime": "2002-01-01T08:00:00Z"
+           },
+           "iCalUID": "d8vuf35e0eopv310tsco54qgko@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          },
+          {
+           "kind": "calendar#event",
+           "etag": "\"3048546144168000\"",
+           "id": "osatgnben82taj0b28osjpjgkc",
+           "status": "confirmed",
+           "htmlLink": "https://www.google.com/calendar/event?eid=b3NhdGduYmVuODJ0YWowYjI4b3NqcGpna2MgbWU3ZmhrdWo1azIxdGFvNzY2bGUycGx2YWtAZw",
+           "created": "2018-04-21T01:11:11.000Z",
+           "updated": "2018-04-21T01:11:12.084Z",
+           "summary": "updated test appointment",
+           "description": "other stuff about this appointment",
+           "location": "there",
+           "creator": {
+            "email": "anna.noel.lewis@gmail.com"
+           },
+           "organizer": {
+            "email": "<fakeCalendar>",
+            "displayName": "TherapyTrack",
+            "self": true
+           },
+           "start": {
+            "dateTime": "2002-01-01T04:00:00Z",
+            "timeZone": "America/Denver"
+           },
+           "end": {
+            "dateTime": "2002-01-01T06:00:00Z",
+            "timeZone": "America/Denver"
+           },
+           "iCalUID": "osatgnben82taj0b28osjpjgkc@google.com",
+           "sequence": 0,
+           "reminders": {
+            "useDefault": true
+           }
+          }
+         ]
+        }
+    http_version: 
+  recorded_at: Sat, 21 Apr 2018 01:11:12 GMT
+recorded_with: VCR 4.0.0

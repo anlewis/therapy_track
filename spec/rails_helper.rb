@@ -17,9 +17,11 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.filter_sensitive_data ('<fakeGoogleClientId>') { ENV['google_client_id'] }
   config.filter_sensitive_data ('<fakeGoogleClientSecret>') { ENV['google_client_secret'] }
-  config.filter_sensitive_data ('<fakeGoogleClient>') { ENV['google_client'] }
   config.filter_sensitive_data ('<fakeCoverallsRepoToken>') { ENV['coveralls_repo_token'] }
+  config.filter_sensitive_data ('<fakeUid>') { ENV['uid'] }
   config.filter_sensitive_data ('<fakeOauthToken>') { ENV['oauth_token'] }
+  config.filter_sensitive_data ('<fakeRefreshToken>') { ENV['refresh_token'] }
+  config.filter_sensitive_data ('<fakeCalendar>') { ENV['calendar'] }
 end
 
 Coveralls.wear!('rails')
