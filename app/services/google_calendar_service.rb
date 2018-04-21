@@ -1,3 +1,5 @@
+require 'google/apis/calendar_v3'
+
 class GoogleCalendarService
   def initialize(current_user)
     @current_user = current_user
@@ -56,28 +58,35 @@ class GoogleCalendarService
 
   private
 
-  attr_reader :current_user, :client, :event_info
+    attr_reader :current_user, :client, :event_info
 
-  def client
-    Signet::OAuth2::Client.new(user_auth)
-  end
+    def raw_client
+      Signet::OAuth2::Client.new(user_auth)
+    end
 
-  def user_auth
-    {
-      'access_token'  => current_user.oauth_token,
-      'expires_in'    => current_user.oauth_expires_at,
-      'token_type'    => 'Bearer',
-      'refresh_token' => current_user.refresh_token
-    }
-  end
+    def client
+      current_user.refresh_token_if_expired(raw_client)
+    end
 
-  def info
-    {
-      summary: params['summary'],
-      location: params['location'],
-      description: params['description'],
-      start: params['start'],
-      end: params['end']
-    }
-  end
+    def user_auth
+      {
+        'access_token'  => current_user.oauth_token,
+        'expires_in'    => current_user.oauth_expires_at,
+        'token_type'    => 'Bearer',
+        'refresh_token' => current_user.refresh_token,
+        'client_id'     => ENV['google_client_id'],
+        'client_secret' => ENV['google_client_secret'],
+        'token_credential_uri' => 'https://accounts.google.com/o/oauth2/token'
+      }
+    end
+
+    def info
+      {
+        summary: params['summary'],
+        location: params['location'],
+        description: params['description'],
+        start: params['start'],
+        end: params['end']
+      }
+    end
 end

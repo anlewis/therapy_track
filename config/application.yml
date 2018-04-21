@@ -8,6 +8,14 @@ provider: "google_oauth2"
 uid: "113078026318261011396"
 name: "Anna Lewis"
 oauth_token: ya29.GlujBew2k7GICFo52bv9fgbE2mPIWX095PUV3l2elfpDWcW6AfirowxY2MN2AAeN8xh2tX2G6zYexTLTehWNUvESxUtU-m07VSZJEB-EaA04aYAZbtUZOGv1_Zrl
+
 oauth_expires_at: "2018-04-20 16:23:52 -0600"
 refresh_token: "1/wA_kNbH0Zx7pJBBGcISXmkUn_mlM7N7X7v7ej0N6y3Q"
 calendar: "me7fhkuj5k21tao766le2plvak@group.calendar.google.com"
+
+#secrets
+project_id: "therapytrack"
+auth_uri: "https://accounts.google.com/o/oauth2/auth"
+token_uri: "https://accounts.google.com/o/oauth2/token"
+auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs"
+redirect_uris: ["http://localhost:3000/callback","http://localhost:3000/auth/google_oauth2/callback","https://therapytrack.herokuapp.com/callback","https://therapytrack.herokuapp.com/auth/google_oauth2/callback"]

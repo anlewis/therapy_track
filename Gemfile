@@ -10,7 +10,7 @@ gem 'bootstrap', '~> 4.0.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'coveralls', require: false
 gem 'figaro'
-gem 'google-api-client', require: 'google/apis/calendar_v3'
+gem 'google-api-client', '~> 0.11'
 gem 'jquery-rails'
 gem 'omniauth-google-oauth2'
 gem 'pg', '>= 0.18', '< 2.0'
